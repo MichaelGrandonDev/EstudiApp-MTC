@@ -7,7 +7,20 @@ EstudiAppMTC/[Uu]ser[Ss]ettings/
 EstudiAppMTC/Builds/
 EstudiAppMTC/*.csproj
 EstudiAppMTC/*.sln
+EstudiAppMTC/MemoryCaptures/
+*.apk
+*.aab
+*.keystore
+*.jks
+build.log
+.vs/
+.vscode/
+.idea/
 .DS_Store
+
+# Libros: cada estudiante importa los suyos; nunca se versionan.
+*.pdf
+*.PDF
 
 # Texto extraído de los libros: sólo para redactar y citar, no se distribuye.
 Tools/knowledge/cache/

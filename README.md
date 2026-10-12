@@ -1,31 +1,74 @@
 # EstudiApp MTC
 
-App de estudio de Medicina Tradicional China hecha con **Unity 6 (6000.6.5f1) y C#**, para macOS, Windows, Android e iOS.
+[![Unity](https://img.shields.io/badge/Unity-6000.6.5f1-000000?logo=unity&logoColor=white)](https://unity.com/)
+[![C#](https://img.shields.io/badge/C%23-9.0-512BD4?logo=dotnet&logoColor=white)](https://learn.microsoft.com/dotnet/csharp/)
+[![Plataformas](https://img.shields.io/badge/plataformas-macOS%20%7C%20Windows%20%7C%20Android%20%7C%20iOS-2E7D6B)](#abrir-y-compilar)
+[![Pruebas](https://img.shields.io/badge/.NET%207%20%2B%20xUnit-68%20pruebas%20OK-3FA34D?logo=dotnet&logoColor=white)](#verificar)
+[![Estado](https://img.shields.io/badge/estado-versi%C3%B3n%20de%20prueba%200.1.0-C9A227)](#planes)
+[![Licencia](https://img.shields.io/badge/licencia-pendiente-lightgrey)](#licencia)
+
+App de estudio de **Medicina Tradicional China** hecha con **Unity 6 (6000.6.5f1) y C#**, para macOS, Windows, Android e iOS. Propone una ruta de aprendizaje por ejes temáticos con lecciones, diagramas interactivos, desafíos con estrellas y sellos, mini tests y repaso espaciado, y enlaza cada cita con la página exacta de tus propios libros en PDF.
 
 Creada por **[MichaelGrandonDev](https://github.com/MichaelGrandonDev)**.
+
+## Capturas
+
+| Inicio | Mapa de desafíos | Mini test: emparejar |
+|---|---|---|
+| ![Pantalla de inicio con nivel, XP, estrellas y sellos](docs/screenshots/02-inicio.png) | ![Mapa de desafíos del eje Fundamentos de la MTC](docs/screenshots/08-desafios-mapa.png) | ![Ejercicio de emparejar hanzi y pinyin con su significado](docs/screenshots/13-minitest-emparejar.png) |
+| **Examen del eje y sello** | **Diagrama Wuxing** | **Móvil** |
+| ![Resultado del examen del eje con estrellas, XP y sello](docs/screenshots/15-examen-sello.png) | ![Diagrama interactivo de los Cinco Elementos y sus ciclos](docs/screenshots/18-diagrama-wuxing-ciclos.png) | ![Pantalla de inicio en móvil](docs/screenshots/25-movil-inicio.png) |
+
+## Funcionalidades
 
 - **Ruta de aprendizaje por ejes temáticos**: dentro de un eje, cada lección se abre al aprobar la anterior con un 70 %. Un eje nuevo se abre cuando dominas el 70 % de los ejes que necesita. El *modo libre* (en Ajustes) abre todo.
 - **Lecciones** con idea central, texto, tablas, notas clínicas, puntos clave, glosario con hanzi y pinyin, citas con libro y página, y una evaluación al final.
 - **Diagramas interactivos**: Wuxing con sus ciclos, Taiji y reloj de los órganos con la hora actual, balanza Yin-Yang con controles, Zang Fu, Sanjiao, formación del Qi, circulación de los canales, vasos extraordinarios… Se pueden tocar, tienen capas que se encienden y recorridos guiados.
-- **Ruta de desafíos**: cada eje es un mapa con un nodo por lección, un desafío al final de cada unidad y un examen final que da el sello del eje. Estrellas, experiencia (XP), niveles y rachas de aciertos para ver cómo avanzas (ver más abajo).
+- **Ruta de desafíos**: cada eje es un mapa con un nodo por lección, un desafío al final de cada unidad y un examen final que da el sello del eje. Estrellas, experiencia (XP), niveles y rachas de aciertos para ver cómo avanzas (ver [Desafíos y mini tests](#desafíos-y-mini-tests)).
 - **Mini tests** por eje («Pon a prueba tu eje»): 5 ejercicios al azar de lo ya estudiado, con reloj opcional y un ejercicio de emparejar términos del glosario.
 - **Repaso espaciado** (cajas Leitner: 1, 3, 7, 16 y 35 días) con las preguntas de las evaluaciones.
-- **Biblioteca**: subes tus PDF, que se reconocen y enlazan solos con la bibliografía. Cada cita de una lección abre tu PDF en la página exacta. El lector tiene zoom, marcadores, búsqueda de texto y ajuste de desfase si tu edición numera distinto.
-- **Planes**: por ahora es una *versión de prueba* con todo abierto. El modelo gratuito/Premium ya está programado y se activa al compilar con `-plans`.
+- **Biblioteca y lector PDF**: subes tus PDF, que se reconocen y enlazan solos con la bibliografía. Cada cita de una lección abre tu PDF en la página exacta. El lector tiene zoom, marcadores, búsqueda de texto y ajuste de desfase si tu edición numera distinto.
+- **Búsqueda** en todo el temario (lecciones, glosario y diagramas).
+- <a id="planes"></a>**Planes**: por ahora es una *versión de prueba* con todo abierto. El modelo gratuito/Premium ya está programado y se activa al compilar con `-plans`.
 
-Los resúmenes están redactados con palabras propias a partir de Li Ping (*El gran libro de la medicina china*), Giovanni Maciocia (*Los fundamentos de la medicina china*), el *Su Wen*, Claudia Focks (*Atlas de acupuntura*) y los apuntes de la Escuela Neidan. Los libros **no** se incluyen en la app: cada estudiante sube los suyos.
+Los resúmenes están redactados con palabras propias a partir de Li Ping (*El gran libro de la medicina china*), Giovanni Maciocia (*Los fundamentos de la medicina china*), el *Su Wen*, Claudia Focks (*Atlas de acupuntura*) y los apuntes de la Escuela Neidan. Los libros **no** se incluyen en la app ni en este repositorio: cada estudiante sube los suyos.
 
-## Estructura
+## Tecnologías usadas
+
+| Componente | Tecnología | Para qué |
+|---|---|---|
+| Motor | **Unity 6** (`6000.6.5f1`) | App multiplataforma con un único proyecto |
+| Lenguaje | **C# 9.0** (el nivel de lenguaje que admite el compilador de Unity) | Toda la lógica y la interfaz |
+| Interfaz | **UI Toolkit** construida en código (sin UXML) + hoja de estilos **USS** (`Theme.uss`) y `RuntimeTheme.tss` | Páginas, navegación lateral (escritorio) e inferior (móvil), tarjetas, tests |
+| Gráficos vectoriales | **Painter2D** (`generateVisualContent`) | Diagramas interactivos (grafo, anillo/reloj, balanza, lengua) e iconos |
+| Serialización | **Newtonsoft.Json** (`com.unity.nuget.newtonsoft-json` 3.2.2) | Temario compilado, progreso, ajustes y biblioteca en JSON |
+| Arquitectura | **Assembly definitions**: `EstudiApp.Domain` (sin referencias al motor), `EstudiApp.Runtime`, `EstudiApp.Editor` | Separar la lógica pura (testeable con .NET) de Unity y de las herramientas de editor |
+| Lector PDF | **PDFium** por **P/Invoke** (`PdfiumNative.cs`), binarios por plataforma en `Assets/Plugins/PDFium` y `pdfium.framework` | Renderizar páginas y extraer texto para buscar |
+| Selector de PDF en Android | Plugin nativo **Java** (`EstudiAppPdf.androidlib`, Storage Access Framework) | Elegir un PDF con el selector de documentos del sistema |
+| Selector de PDF en iOS | Plugin nativo **Objective-C++** (`EstudiAppPdf.mm`, `UIDocumentPicker`) | Elegir un PDF desde Archivos |
+| Selector de PDF en escritorio | Diálogo del sistema: `osascript` (macOS), PowerShell + WinForms (Windows), `zenity` (Linux) | Importar PDF sin dependencias extra |
+| Compilación móvil | **IL2CPP**, **ARM64**, Android API 26+, iOS 15+ | Builds nativos para Google Play / App Store |
+| Escritorio | Standalone macOS y Windows (con atajo de compilación); binario de PDFium para Linux x86_64 incluido | Uso en ordenador |
+| Pipeline de contenido | **Python 3**: `build_content.py` (markdown + JSON → `curriculum.json`, subconjunto de Noto Sans SC con `fontTools.subset`), `kb.py` (índice de los libros con **SQLite FTS5** y **pypdf**), `patch_fonts.py` (**fontTools**), `make_icon.py` (**Pillow**) | Redactar, validar y compilar el temario; generar fuentes e icono |
+| Pruebas | **.NET 7** + **xUnit** (`Tools/DomainTests`) | Probar el dominio y validar el temario sin abrir Unity |
+| Tipografías | **Outfit**, **Cormorant Garamond**, **Noto Sans SC** (SIL OFL) | Texto, títulos y caracteres chinos |
+| Formato de contenido | **Markdown** con directivas propias + **JSON** | Ejes, lecciones, evaluaciones, bibliografía y diagramas |
+
+Paquetes de Unity usados (ver `EstudiAppMTC/Packages/manifest.json`): `com.unity.nuget.newtonsoft-json`, `com.unity.ugui` y los módulos `androidjni`, `imageconversion`, `imgui`, `jsonserialize`, `ui`, `uielements` y `unitywebrequest`.
+
+## Arquitectura y estructura
 
 ```
 EstudiAppMTC/                     Proyecto Unity
   Assets/_Project/Scripts/
-    Domain/                       Lógica pura (sin Unity): temario, progreso, repaso, planes, búsqueda
+    Domain/                       Lógica pura (sin Unity): temario, progreso, desafíos, recompensas,
+                                  repaso, planes, búsqueda y reconocimiento de libros
     Runtime/Core/                 Arranque, servicios, guardado JSON, biblioteca, selector de PDF
     Runtime/Pdf/                  PDFium por P/Invoke (renderizado y texto)
     Runtime/UI/                   Interfaz (UI Toolkit construida en código), páginas y diagramas
     Editor/                       Escena, ajustes del reproductor, plugins nativos y compilación
   Assets/_Project/Resources/UI/   Theme.uss, fuentes (Outfit, Cormorant Garamond, Noto Sans SC reducida)
+  Assets/_Project/Branding/       Iconos de la app
   Assets/Plugins/                 PDFium por plataforma, selector de Android (.androidlib) e iOS (.mm)
   Assets/StreamingAssets/content/curriculum.json   Temario compilado
 Tools/
@@ -34,7 +77,10 @@ Tools/
   DomainTests/                    Pruebas xUnit del dominio y validación del temario
   branding/make_icon.py           Genera el icono de la app (Assets/_Project/Branding)
   vendor/                         Noto Sans SC completa (las descargas de PDFium no se versionan)
+docs/screenshots/                 Capturas de este README
 ```
+
+El dominio no depende de Unity (`noEngineReferences: true`), así que el mismo código se compila dentro de Unity y en el proyecto de pruebas de .NET.
 
 ## Abrir y compilar
 
@@ -77,6 +123,8 @@ python3 Tools/knowledge/kb.py build        # una vez: índice de los libros, par
 python3 Tools/content/build_content.py     # genera curriculum.json y la fuente china reducida
 python3 Tools/content/patch_fonts.py       # sólo si se reemplazan las fuentes Outfit (añade ǐ ǒ ǔ)
 ```
+
+Dependencias de Python: `pypdf` (para `kb.py build`), `fontTools` (fuentes) y `Pillow` (icono).
 
 Buscar en los libros mientras se redacta: `python3 Tools/knowledge/kb.py search jing prenatal --book liping,maciocia` y `python3 Tools/knowledge/kb.py show maciocia 27`.
 
@@ -160,8 +208,22 @@ La lógica está en `Domain/Services/ChallengeService.cs` y `Rewards.cs`; no cam
 
 ## Datos del estudiante
 
-Se guardan en `Application.persistentDataPath`: `progress.json`, `settings.json`, `library.json` y la carpeta `library/` con los PDF importados.
+Se guardan en `Application.persistentDataPath`: `progress.json`, `settings.json`, `library.json` y la carpeta `library/` con los PDF importados. No hay servidor ni cuentas: todo queda en el dispositivo.
+
+## Aviso
+
+EstudiApp MTC es una **herramienta de estudio**. No sustituye la formación reglada ni el criterio de un profesional sanitario, y no debe usarse para diagnosticar ni tratar.
+
+## Derechos de autor del contenido
+
+- Los libros de referencia **no** forman parte del repositorio ni de la app; cada estudiante importa sus propios PDF.
+- Los resúmenes del temario están redactados con palabras propias; sólo se incluyen citas textuales breves con su referencia.
+- El índice de texto de los libros (`Tools/knowledge/cache/`), los registros y las capturas del lector (`Tools/logs/`) se generan en local y están excluidos con `.gitignore`.
+
+## Licencia
+
+Pendiente de decisión del autor. Mientras no se añada un archivo `LICENSE`, todos los derechos sobre el código y el contenido propio quedan reservados.
 
 ## Licencias de terceros
 
-PDFium (BSD/Apache 2.0), Outfit, Cormorant Garamond y Noto Sans SC (SIL Open Font License; a Outfit se le añadieron las vocales del pinyin con carón), y Newtonsoft.Json (MIT).
+PDFium (BSD/Apache 2.0, ver `Assets/Plugins/PDFium/LICENSE-pdfium.txt`), Outfit, Cormorant Garamond y Noto Sans SC (SIL Open Font License; a Outfit se le añadieron las vocales del pinyin con carón), y Newtonsoft.Json (MIT).
