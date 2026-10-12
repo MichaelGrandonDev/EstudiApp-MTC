@@ -43,6 +43,8 @@ namespace EstudiApp.Core
                 yield return null;
             }
 
+            // Sin foco la app se pausa y el recorrido se quedaría a medias.
+            Application.runInBackground = true;
             // El recorrido simula progreso: nada se guarda y se parte de cero (las notas y la biblioteca no se tocan).
             services.SavingSuspended = true;
             services.Progress.Reset();
@@ -183,12 +185,7 @@ namespace EstudiApp.Core
             yield return shot("desafios-ruta");
             var root = shell.GetComponent<UIDocument>().rootVisualElement;
             shell.Push(new AxisPage(axis));
-            for (var i = 0; i < 6; i++)
-            {
-                var sv = UnityEngine.UIElements.UQueryExtensions.Q<ScrollView>(root, className: "page-scroll");
-                Debug.Log($"[EstudiApp] Mapa t{i}: scroll={sv?.scrollOffset} foco={root.focusController?.focusedElement}");
-                yield return new WaitForSeconds(0.3f);
-            }
+            yield return new WaitForSeconds(1.5f);
             yield return shot("desafios-mapa");
             var scroll = UnityEngine.UIElements.UQueryExtensions.Q<ScrollView>(root, className: "page-scroll");
             if (scroll != null)
