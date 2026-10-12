@@ -1,0 +1,291 @@
+[
+  {
+    "id": "taiji-ciclo",
+    "title": "Taiji: el ciclo del Yin y el Yang en el día",
+    "kind": "ring",
+    "center": "taiji",
+    "intro": "El Yang nace a medianoche y culmina al mediodía; el Yin nace al mediodía y culmina a medianoche. Toca cada fase. La aguja marca la hora actual.",
+    "aspect": 1.0,
+    "showClock": true,
+    "startHour": 0,
+    "segments": [
+      { "id": "yang-en-yin", "label": "Yang dentro del Yin", "sub": "00–06 h · madrugada", "color": "#5B6F8F", "hour": 0,
+        "detail": "Desde la medianoche el Yang empieza a crecer dentro del Yin: el cuerpo pasa de la inhibición del sueño hacia el despertar. Es el «Yang dentro del Yin»." },
+      { "id": "yang-en-yang", "label": "Yang dentro del Yang", "sub": "06–12 h · mañana", "color": "#E2A93B", "hour": 6,
+        "detail": "Por la mañana el Yang sigue creciendo hasta su máximo al mediodía: predominan la actividad y la excitación. Es el «Yang dentro del Yang»." },
+      { "id": "yin-en-yang", "label": "Yin dentro del Yang", "sub": "12–18 h · tarde", "color": "#D07A4E", "hour": 12,
+        "detail": "Al mediodía nace el Yin: durante la tarde aún es de día (Yang) pero el Yin crece y la actividad empieza a disminuir. Es el «Yin dentro del Yang»." },
+      { "id": "yin-en-yin", "label": "Yin dentro del Yin", "sub": "18–24 h · noche", "color": "#2F3E5C", "hour": 18,
+        "detail": "En la primera mitad de la noche el Yin sigue creciendo hasta su máximo a medianoche: reposo, recogimiento, sueño. Es el «Yin dentro del Yin»." }
+    ],
+    "references": ["liping:16-18", "suwen:cap4", "maciocia:2-4"]
+  },
+  {
+    "id": "yinyang-balanza",
+    "title": "La balanza Yin-Yang: excesos y vacíos",
+    "kind": "balance",
+    "intro": "Mueve los controles de Yin y Yang. La línea discontinua marca el nivel normal. Observa qué síndrome aparece y su tratamiento.",
+    "aspect": 0.72,
+    "states": [
+      { "id": "equilibrio", "title": "Equilibrio relativo", "text": "Yin y Yang se controlan mutuamente dentro de límites normales: es el estado fisiológico. El equilibrio nunca es fijo: oscila con el día, las estaciones y la actividad.", "ref": "liping:20-21" },
+      { "id": "exceso_yang", "title": "Exceso de Yang → Calor por plenitud", "text": "Un factor patógeno Yang (Calor, Fuego) o una hiperactividad Yang: fiebre alta, sed, cara roja, inquietud, pulso rápido y lleno. **Tratamiento:** eliminar el Calor.", "ref": "liping:21" },
+      { "id": "exceso_yin", "title": "Exceso de Yin → Frío por plenitud", "text": "Un factor patógeno Yin (Frío, Humedad): escalofríos, extremidades frías, dolor abdominal intenso que empeora con el frío, pulso profundo y tenso. **Tratamiento:** expulsar el Frío y calentar.", "ref": "liping:22" },
+      { "id": "vacio_yin", "title": "Vacío de Yin → Calor por vacío", "text": "El Yin insuficiente no controla al Yang, que queda en exceso relativo: sofocos por la tarde, pómulos rojos, sudor nocturno, boca seca, lengua roja sin saburra, pulso fino y rápido. **Tratamiento:** nutrir el Yin (no enfriar con fuerza).", "ref": "liping:22" },
+      { "id": "vacio_yang", "title": "Vacío de Yang → Frío por vacío", "text": "El Yang insuficiente no calienta ni controla al Yin: sensación de frío, cansancio, palidez, orina clara y abundante, heces blandas, pulso débil y profundo. **Tratamiento:** tonificar y calentar el Yang.", "ref": "liping:23" },
+      { "id": "vacio_ambos", "title": "Vacío de Yin y de Yang", "text": "Como se sostienen mutuamente, el vacío prolongado de uno termina dañando al otro («lesión concomitante»). Signos mixtos de frío y de calor con gran debilidad. **Tratamiento:** tonificar ambos, empezando por el más afectado.", "ref": "liping:23" },
+      { "id": "exceso_yang_dana_yin", "title": "Exceso de Yang que daña el Yin", "text": "El Calor por plenitud consume los líquidos: además de fiebre y sed intensa aparecen sequedad, heces secas y orina escasa. **Tratamiento:** eliminar el Calor y proteger los líquidos.", "ref": "liping:21" },
+      { "id": "exceso_yin_dana_yang", "title": "Exceso de Yin que daña el Yang", "text": "El Frío por plenitud persistente agota el Yang: al frío intenso se suman cansancio y debilidad. **Tratamiento:** expulsar el Frío y apoyar el Yang.", "ref": "liping:22" },
+      { "id": "plenitud_ambos", "title": "Plenitud con lucha intensa", "text": "En la clínica no se describe un «exceso de ambos» como estado estable: cuando hay un factor patógeno fuerte, uno de los dos predomina y daña al otro. Prueba bajando uno de los controles.", "ref": "maciocia:8-11" }
+    ],
+    "references": ["liping:20-23", "maciocia:8-11", "neidan_1_fund_mtc:7-8"]
+  },
+  {
+    "id": "wuxing-ciclos",
+    "title": "Wuxing: los Cinco Elementos y sus ciclos",
+    "kind": "graph",
+    "intro": "Toca un elemento para ver sus correspondencias. Enciende o apaga cada ciclo y sigue el recorrido guiado.",
+    "aspect": 0.95,
+    "layout": { "type": "circle", "order": ["fuego", "tierra", "metal", "agua", "madera"], "centerX": 0.5, "centerY": 0.52, "radius": 0.33, "startAngle": -90 },
+    "nodes": [
+      { "id": "madera", "label": "Madera", "hanzi": "木", "sub": "Hígado · VB", "color": "#3E8E5A", "size": 0.085,
+        "detail": "**Estación:** primavera · **Clima:** viento · **Zang/Fu:** Hígado / Vesícula Biliar · **Tejido:** tendones · **Se manifiesta en:** uñas · **Sentido:** ojos · **Emoción:** ira · **Color:** verde · **Sabor:** ácido · **Sonido:** grito · **Dirección:** este · **Desarrollo:** nacimiento. Movimiento: expansión hacia afuera.", "ref": "maciocia:21" },
+      { "id": "fuego", "label": "Fuego", "hanzi": "火", "sub": "Corazón · ID", "color": "#C8473D", "size": 0.085,
+        "detail": "**Estación:** verano · **Clima:** calor · **Zang/Fu:** Corazón (y Pericardio) / Intestino Delgado (y San Jiao) · **Tejido:** vasos · **Se manifiesta en:** tez · **Sentido:** lengua · **Emoción:** alegría · **Color:** rojo · **Sabor:** amargo · **Sonido:** risa · **Dirección:** sur · **Desarrollo:** crecimiento. Movimiento: ascenso.", "ref": "maciocia:21" },
+      { "id": "tierra", "label": "Tierra", "hanzi": "土", "sub": "Bazo · Estómago", "color": "#C99A2E", "size": 0.085,
+        "detail": "**Estación:** canícula / final de cada estación · **Clima:** humedad · **Zang/Fu:** Bazo / Estómago · **Tejido:** músculos · **Se manifiesta en:** labios · **Sentido:** boca · **Emoción:** preocupación (reflexión) · **Color:** amarillo · **Sabor:** dulce · **Sonido:** canto · **Dirección:** centro · **Desarrollo:** transformación. Movimiento: giro, estabilidad.", "ref": "maciocia:21" },
+      { "id": "metal", "label": "Metal", "hanzi": "金", "sub": "Pulmón · IG", "color": "#8D99A3", "size": 0.085,
+        "detail": "**Estación:** otoño · **Clima:** sequedad · **Zang/Fu:** Pulmón / Intestino Grueso · **Tejido:** piel · **Se manifiesta en:** vello corporal · **Sentido:** nariz · **Emoción:** tristeza · **Color:** blanco · **Sabor:** picante · **Sonido:** llanto · **Dirección:** oeste · **Desarrollo:** cosecha. Movimiento: contracción hacia adentro.", "ref": "maciocia:21" },
+      { "id": "agua", "label": "Agua", "hanzi": "水", "sub": "Riñón · Vejiga", "color": "#2D5D8A", "size": 0.085,
+        "detail": "**Estación:** invierno · **Clima:** frío · **Zang/Fu:** Riñón / Vejiga · **Tejido:** huesos · **Se manifiesta en:** cabello · **Sentido:** oídos · **Emoción:** miedo · **Color:** negro · **Sabor:** salado · **Sonido:** gemido · **Dirección:** norte · **Desarrollo:** almacenamiento. Movimiento: descenso.", "ref": "maciocia:21" }
+    ],
+    "layers": [
+      { "id": "sheng", "name": "Generación (Sheng)", "color": "#2E8B57", "on": true, "description": "Cada elemento genera al siguiente como una madre a su hijo." },
+      { "id": "ke", "name": "Control (Ke)", "color": "#B23A48", "on": true, "description": "Cada elemento controla al que está dos lugares más allá." },
+      { "id": "cheng", "name": "Explotación (agresión)", "color": "#E07B24", "on": false, "description": "Control excesivo, en el sentido del ciclo Ke." },
+      { "id": "wu", "name": "Oposición (insulto)", "color": "#7E57C2", "on": false, "description": "Control invertido: el controlado se rebela contra su controlador." }
+    ],
+    "edges": [
+      { "from": "madera", "to": "fuego", "layer": "sheng", "bend": -0.28, "detail": "La Madera genera el Fuego: la Sangre del Hígado nutre al Corazón." },
+      { "from": "fuego", "to": "tierra", "layer": "sheng", "bend": -0.28, "detail": "El Fuego genera la Tierra: el Yang del Corazón calienta al Bazo." },
+      { "from": "tierra", "to": "metal", "layer": "sheng", "bend": -0.28, "detail": "La Tierra genera el Metal: el Bazo produce el Qi que alimenta al Pulmón." },
+      { "from": "metal", "to": "agua", "layer": "sheng", "bend": -0.28, "detail": "El Metal genera el Agua: el Pulmón desciende Qi y líquidos hacia el Riñón." },
+      { "from": "agua", "to": "madera", "layer": "sheng", "bend": -0.28, "detail": "El Agua genera la Madera: la Esencia y el Yin del Riñón nutren al Hígado." },
+      { "from": "madera", "to": "tierra", "layer": "ke", "detail": "La Madera controla la Tierra: el Hígado asegura el libre flujo que ayuda a la digestión." },
+      { "from": "tierra", "to": "agua", "layer": "ke", "detail": "La Tierra controla el Agua: el Bazo transforma los líquidos y evita que el Agua se desborde." },
+      { "from": "agua", "to": "fuego", "layer": "ke", "detail": "El Agua controla el Fuego: el Yin del Riñón refresca el Fuego del Corazón." },
+      { "from": "fuego", "to": "metal", "layer": "ke", "detail": "El Fuego controla el Metal: el Corazón regula la dispersión del Pulmón." },
+      { "from": "metal", "to": "madera", "layer": "ke", "detail": "El Metal controla la Madera: el descenso del Pulmón frena el ascenso excesivo del Hígado." },
+      { "from": "madera", "to": "tierra", "layer": "cheng", "bend": 0.12, "dashed": true, "detail": "La Madera explota a la Tierra: el Hígado estancado agrede al Bazo-Estómago (distensión, digestión alterada con el estrés)." },
+      { "from": "tierra", "to": "agua", "layer": "cheng", "bend": 0.12, "dashed": true, "detail": "La Tierra explota al Agua: la Humedad del Bazo obstruye al Riñón." },
+      { "from": "agua", "to": "fuego", "layer": "cheng", "bend": 0.12, "dashed": true, "detail": "El Agua explota al Fuego: el Agua desbordada (vacío de Yang de Riñón) afecta al Corazón." },
+      { "from": "fuego", "to": "metal", "layer": "cheng", "bend": 0.12, "dashed": true, "detail": "El Fuego explota al Metal: el Fuego de Corazón seca el Pulmón." },
+      { "from": "metal", "to": "madera", "layer": "cheng", "bend": 0.12, "dashed": true, "detail": "El Metal explota a la Madera: un Pulmón en exceso bloquea el libre flujo del Hígado." },
+      { "from": "tierra", "to": "madera", "layer": "wu", "bend": 0.12, "dashed": true, "detail": "La Tierra se opone a la Madera: la Humedad-Calor del Bazo obstruye la Vesícula Biliar y el Hígado." },
+      { "from": "agua", "to": "tierra", "layer": "wu", "bend": 0.12, "dashed": true, "detail": "El Agua se opone a la Tierra: el Riñón débil no puede transformar los líquidos y el Bazo se ve invadido." },
+      { "from": "fuego", "to": "agua", "layer": "wu", "bend": 0.12, "dashed": true, "detail": "El Fuego se opone al Agua: el Fuego de Corazón consume el Yin del Riñón." },
+      { "from": "metal", "to": "fuego", "layer": "wu", "bend": 0.12, "dashed": true, "detail": "El Metal se opone al Fuego: un Pulmón obstruido afecta la circulación del Corazón." },
+      { "from": "madera", "to": "metal", "layer": "wu", "bend": 0.12, "dashed": true, "detail": "La Madera se opone al Metal: el Fuego de Hígado sube y «insulta» al Pulmón (tos con irritabilidad)." }
+    ],
+    "steps": [
+      { "title": "Cinco movimientos", "text": "Fuego arriba (verano, ascenso), Agua abajo (invierno, descenso), Madera a la izquierda (este, expansión), Metal a la derecha (oeste, contracción) y la Tierra que transforma.", "focus": ["fuego", "agua", "madera", "metal", "tierra"], "layers": [] },
+      { "title": "Generación", "text": "Madera → Fuego → Tierra → Metal → Agua → Madera. Cada elemento es hijo del anterior y madre del siguiente.", "focus": [], "layers": ["sheng"] },
+      { "title": "Control", "text": "Cada elemento frena al que está dos lugares más allá: es la estrella interior. Generación y control juntos mantienen el equilibrio.", "focus": [], "layers": ["sheng", "ke"] },
+      { "title": "Explotación", "text": "Un control excesivo: el ejemplo más frecuente en la consulta es la Madera (Hígado) que agrede a la Tierra (Bazo-Estómago).", "focus": ["madera", "tierra"], "layers": ["cheng"] },
+      { "title": "Oposición", "text": "El control se invierte. Ejemplo: el Fuego de Hígado sube y «insulta» al Pulmón; el Fuego de Corazón consume el Agua del Riñón.", "focus": ["madera", "metal"], "layers": ["wu"] }
+    ],
+    "references": ["maciocia:15-21", "liping:24-39", "neidan_1_fund_mtc:12-15"]
+  },
+  {
+    "id": "qi-funciones",
+    "title": "Las funciones del Qi",
+    "kind": "graph",
+    "intro": "Toca cada función para ver qué ocurre cuando falla.",
+    "aspect": 0.85,
+    "layout": { "type": "circle", "order": ["transformar", "transportar", "contener", "elevar", "proteger", "calentar"], "centerX": 0.5, "centerY": 0.5, "radius": 0.33, "startAngle": -90 },
+    "nodes": [
+      { "id": "qi", "label": "Qi", "hanzi": "气", "sub": "materia y función", "x": 0.5, "y": 0.5, "color": "#2E7D6B", "size": 0.1,
+        "detail": "Base de todos los fenómenos: condensado toma forma, disperso es actividad. En el cuerpo, «Qi de un órgano» es su actividad funcional." },
+      { "id": "transformar", "label": "Transformar", "color": "#C99A2E", "detail": "Convierte el alimento en Qi, Sangre y líquidos; el Qi de Riñón transforma la orina. **Si falla:** mala digestión, poca Sangre, acumulación de Humedad." },
+      { "id": "transportar", "label": "Impulsar", "color": "#3E8E5A", "detail": "Mueve la Sangre y los líquidos, sostiene el crecimiento y el movimiento. **Si falla:** estancamiento, dolor, edema." },
+      { "id": "contener", "label": "Contener", "color": "#8D6E63", "detail": "Mantiene la Sangre en los vasos y controla sudor, orina y semen. **Si falla:** hemorragias, sudor espontáneo, incontinencia." },
+      { "id": "elevar", "label": "Elevar", "color": "#7E57C2", "detail": "Sostiene los órganos en su lugar y sube lo puro a la cabeza (Qi de Bazo). **Si falla:** prolapsos, mareo, cansancio." },
+      { "id": "proteger", "label": "Proteger", "color": "#2D5D8A", "detail": "El Qi defensivo cierra la superficie frente al Viento, el Frío y demás factores externos. **Si falla:** resfriados frecuentes." },
+      { "id": "calentar", "label": "Calentar", "color": "#C8473D", "detail": "El Qi (en su aspecto Yang) mantiene la temperatura del cuerpo. **Si falla:** frío, extremidades frías." }
+    ],
+    "edges": [
+      { "from": "qi", "to": "transformar", "noArrow": true },
+      { "from": "qi", "to": "transportar", "noArrow": true },
+      { "from": "qi", "to": "contener", "noArrow": true },
+      { "from": "qi", "to": "elevar", "noArrow": true },
+      { "from": "qi", "to": "proteger", "noArrow": true },
+      { "from": "qi", "to": "calentar", "noArrow": true }
+    ],
+    "references": ["maciocia:47-48", "liping:90-95"]
+  },
+  {
+    "id": "qi-formacion",
+    "title": "Formación del Qi",
+    "kind": "graph",
+    "intro": "Del alimento y el aire al Qi que circula. Sigue el recorrido guiado o toca cada etapa.",
+    "aspect": 0.95,
+    "nodes": [
+      { "id": "alimento", "label": "Alimento", "x": 0.14, "y": 0.1, "shape": "rect", "size": 0.1, "color": "#9E9D24", "detail": "Comida y bebida entran en el Estómago." },
+      { "id": "estomago", "label": "Estómago", "hanzi": "胃", "x": 0.14, "y": 0.34, "shape": "rect", "size": 0.1, "color": "#C99A2E", "detail": "«Descompone y madura» el alimento: el primer paso de la digestión." },
+      { "id": "bazo", "label": "Bazo", "hanzi": "脾", "sub": "Gu Qi", "x": 0.14, "y": 0.6, "shape": "rect", "size": 0.1, "color": "#C99A2E", "detail": "Extrae la parte pura del alimento: el **Qi de los alimentos (Gu Qi)**, y la envía hacia arriba, al pecho." },
+      { "id": "aire", "label": "Aire", "x": 0.86, "y": 0.1, "shape": "rect", "size": 0.1, "color": "#90A4AE", "detail": "El aire puro que se inspira (Qing Qi)." },
+      { "id": "pulmon", "label": "Pulmón", "hanzi": "肺", "x": 0.86, "y": 0.34, "shape": "rect", "size": 0.1, "color": "#8D99A3", "detail": "Recibe el aire y lo une al Qi de los alimentos en el pecho." },
+      { "id": "zong", "label": "Zong Qi", "hanzi": "宗气", "sub": "Qi del pecho", "x": 0.5, "y": 0.3, "color": "#00897B", "size": 0.085, "detail": "**Qi de Reunión:** nutre Corazón y Pulmón, sostiene la respiración y la voz y empuja la circulación hacia las extremidades." },
+      { "id": "yuan", "label": "Yuan Qi", "hanzi": "元气", "sub": "Riñón", "x": 0.5, "y": 0.86, "color": "#2D5D8A", "size": 0.085, "detail": "**Qi Original:** Esencia transformada en Qi. Catalizador de todas las transformaciones; circula por el San Jiao." },
+      { "id": "zhen", "label": "Zhen Qi", "hanzi": "真气", "sub": "Qi Verdadero", "x": 0.5, "y": 0.56, "color": "#2E7D6B", "size": 0.085, "detail": "**Qi Verdadero:** la etapa final; circula por los canales y nutre los órganos." },
+      { "id": "ying", "label": "Ying Qi", "hanzi": "营气", "sub": "nutritivo · Yin", "x": 0.2, "y": 0.84, "color": "#AD1457", "size": 0.08, "detail": "**Qi Nutritivo:** circula con la Sangre por los vasos y canales; es el que se activa al pinchar un punto." },
+      { "id": "wei", "label": "Wei Qi", "hanzi": "卫气", "sub": "defensivo · Yang", "x": 0.8, "y": 0.84, "color": "#EF6C00", "size": 0.08, "detail": "**Qi Defensivo:** fuera de los canales, en piel y músculos; calienta, regula los poros y protege. De día por fuera, de noche por dentro." }
+    ],
+    "edges": [
+      { "from": "alimento", "to": "estomago" },
+      { "from": "estomago", "to": "bazo" },
+      { "from": "bazo", "to": "zong", "bend": -0.25, "label": "Gu Qi sube" },
+      { "from": "aire", "to": "pulmon" },
+      { "from": "pulmon", "to": "zong" },
+      { "from": "zong", "to": "zhen" },
+      { "from": "yuan", "to": "zhen", "label": "cataliza", "dashed": true },
+      { "from": "zhen", "to": "ying" },
+      { "from": "zhen", "to": "wei" }
+    ],
+    "steps": [
+      { "title": "1 · El alimento", "text": "El Estómago descompone y madura el alimento; el Bazo extrae su parte pura, el Qi de los alimentos.", "focus": ["alimento", "estomago", "bazo"] },
+      { "title": "2 · El aire", "text": "El Pulmón inspira el aire puro.", "focus": ["aire", "pulmon"] },
+      { "title": "3 · El Qi del pecho", "text": "En el pecho, el Qi de los alimentos se une al aire y forma el Zong Qi, que mueve respiración, voz y circulación.", "focus": ["zong", "bazo", "pulmon"] },
+      { "title": "4 · El catalizador", "text": "El Qi Original del Riñón transforma el Zong Qi en Qi Verdadero.", "focus": ["yuan", "zhen"] },
+      { "title": "5 · Dentro y fuera", "text": "El Qi Verdadero circula como Qi Nutritivo (dentro, con la Sangre) y como Qi Defensivo (fuera, en la superficie).", "focus": ["zhen", "ying", "wei"] }
+    ],
+    "references": ["maciocia:42-47", "liping:90-95"]
+  },
+  {
+    "id": "jing-ciclos",
+    "title": "Los ciclos de la Esencia (Su Wen, capítulo 1)",
+    "kind": "graph",
+    "intro": "La mujer cambia cada 7 años y el hombre cada 8. Toca cada edad para leer lo que describe Qi Bo al Emperador Amarillo.",
+    "aspect": 0.62,
+    "nodes": [
+      { "id": "m7", "label": "7", "sub": "mujer", "x": 0.09, "y": 0.28, "color": "#AD1457", "size": 0.045, "layer": "mujer", "detail": "El Qi de Riñón florece: cambian los dientes y crece el cabello." },
+      { "id": "m14", "label": "14", "x": 0.22, "y": 0.28, "color": "#AD1457", "size": 0.045, "layer": "mujer", "detail": "Llega el **Tian Gui**; el Ren Mai se abre y el Chong Mai se llena: aparece la menstruación y la fertilidad." },
+      { "id": "m21", "label": "21", "x": 0.35, "y": 0.28, "color": "#AD1457", "size": 0.045, "layer": "mujer", "detail": "El Qi de Riñón alcanza su plenitud; salen las muelas del juicio; el desarrollo es completo." },
+      { "id": "m28", "label": "28", "x": 0.48, "y": 0.28, "color": "#AD1457", "size": 0.045, "layer": "mujer", "detail": "Tendones y huesos firmes, cabello abundante: el cuerpo en su máxima fortaleza." },
+      { "id": "m35", "label": "35", "x": 0.61, "y": 0.28, "color": "#AD1457", "size": 0.045, "layer": "mujer", "detail": "Los canales Yang Ming empiezan a debilitarse: la tez se marchita y el cabello comienza a caer." },
+      { "id": "m42", "label": "42", "x": 0.74, "y": 0.28, "color": "#AD1457", "size": 0.045, "layer": "mujer", "detail": "Los tres canales Yang se debilitan en la cara: la tez pierde brillo y aparecen canas." },
+      { "id": "m49", "label": "49", "x": 0.87, "y": 0.28, "color": "#AD1457", "size": 0.045, "layer": "mujer", "detail": "Ren Mai y Chong Mai se vacían, el Tian Gui se agota: cesa la menstruación y la capacidad de concebir." },
+      { "id": "h8", "label": "8", "sub": "hombre", "x": 0.06, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "El Qi de Riñón se fortalece: cambian los dientes y crece el cabello." },
+      { "id": "h16", "label": "16", "x": 0.18, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "Llega el **Tian Gui**; la Esencia es abundante; Yin y Yang se armonizan: puede procrear." },
+      { "id": "h24", "label": "24", "x": 0.3, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "El Qi de Riñón alcanza su plenitud; tendones y huesos se fortalecen; salen las muelas del juicio." },
+      { "id": "h32", "label": "32", "x": 0.42, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "Tendones y huesos en pleno desarrollo; los músculos en su plenitud." },
+      { "id": "h40", "label": "40", "x": 0.54, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "El Qi de Riñón empieza a declinar: cae el cabello y los dientes se resienten." },
+      { "id": "h48", "label": "48", "x": 0.66, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "El Yang se agota en la parte alta: la cara se marchita y encanecen las sienes." },
+      { "id": "h56", "label": "56", "x": 0.78, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "El Qi del Hígado declina: los tendones pierden flexibilidad; el Tian Gui se agota y la Esencia mengua." },
+      { "id": "h64", "label": "64", "x": 0.9, "y": 0.72, "color": "#2D5D8A", "size": 0.042, "layer": "hombre", "detail": "Caen dientes y cabello; los cinco Zang se debilitan; termina la capacidad de procrear." }
+    ],
+    "layers": [
+      { "id": "mujer", "name": "Mujer (7 años)", "color": "#AD1457", "on": true },
+      { "id": "hombre", "name": "Hombre (8 años)", "color": "#2D5D8A", "on": true }
+    ],
+    "edges": [
+      { "from": "m7", "to": "m14", "layer": "mujer" }, { "from": "m14", "to": "m21", "layer": "mujer" }, { "from": "m21", "to": "m28", "layer": "mujer" },
+      { "from": "m28", "to": "m35", "layer": "mujer" }, { "from": "m35", "to": "m42", "layer": "mujer" }, { "from": "m42", "to": "m49", "layer": "mujer" },
+      { "from": "h8", "to": "h16", "layer": "hombre" }, { "from": "h16", "to": "h24", "layer": "hombre" }, { "from": "h24", "to": "h32", "layer": "hombre" },
+      { "from": "h32", "to": "h40", "layer": "hombre" }, { "from": "h40", "to": "h48", "layer": "hombre" }, { "from": "h48", "to": "h56", "layer": "hombre" },
+      { "from": "h56", "to": "h64", "layer": "hombre" }
+    ],
+    "references": ["suwen:cap1@16", "maciocia:39-41"]
+  },
+  {
+    "id": "xue-formacion",
+    "title": "Formación y circulación de la Sangre",
+    "kind": "graph",
+    "intro": "Toca cada órgano para ver su papel con la Sangre.",
+    "aspect": 0.8,
+    "nodes": [
+      { "id": "estomago", "label": "Estómago", "hanzi": "胃", "x": 0.15, "y": 0.82, "shape": "rect", "size": 0.1, "color": "#C99A2E", "detail": "Recibe y madura el alimento." },
+      { "id": "bazo", "label": "Bazo", "hanzi": "脾", "x": 0.15, "y": 0.5, "shape": "rect", "size": 0.1, "color": "#C99A2E", "detail": "**Produce** la Sangre (envía el Qi de los alimentos al pecho) y la **mantiene** dentro de los vasos." },
+      { "id": "pulmon", "label": "Pulmón", "hanzi": "肺", "x": 0.15, "y": 0.16, "shape": "rect", "size": 0.1, "color": "#8D99A3", "detail": "Con el Qi de Reunión **impulsa** el Qi de los alimentos hacia el Corazón." },
+      { "id": "corazon", "label": "Corazón", "hanzi": "心", "x": 0.5, "y": 0.16, "shape": "rect", "size": 0.1, "color": "#C8473D", "detail": "Allí el Qi de los alimentos «se vuelve rojo»: el Corazón **gobierna** la Sangre y los vasos." },
+      { "id": "sangre", "label": "Sangre", "hanzi": "血", "x": 0.5, "y": 0.5, "color": "#B71C1C", "size": 0.095, "detail": "Nutre, humedece y alberga la Mente." },
+      { "id": "higado", "label": "Hígado", "hanzi": "肝", "x": 0.85, "y": 0.5, "shape": "rect", "size": 0.1, "color": "#3E8E5A", "detail": "**Almacena** la Sangre: en reposo vuelve al Hígado, en actividad va a los músculos. Nutre ojos, tendones y menstruación." },
+      { "id": "rinon", "label": "Riñón", "hanzi": "肾", "sub": "Esencia · Médula", "x": 0.5, "y": 0.84, "shape": "rect", "size": 0.11, "color": "#2D5D8A", "detail": "La Esencia produce Médula, que **contribuye** a formar Sangre." },
+      { "id": "qi", "label": "Qi", "hanzi": "气", "x": 0.85, "y": 0.16, "color": "#2E7D6B", "size": 0.07, "detail": "«El Qi es el comandante de la Sangre» (la produce, la mueve, la contiene); «la Sangre es la madre del Qi»." }
+    ],
+    "edges": [
+      { "from": "estomago", "to": "bazo" },
+      { "from": "bazo", "to": "pulmon", "label": "Gu Qi" },
+      { "from": "pulmon", "to": "corazon" },
+      { "from": "corazon", "to": "sangre" },
+      { "from": "rinon", "to": "sangre", "dashed": true },
+      { "from": "sangre", "to": "higado", "label": "almacena" },
+      { "from": "qi", "to": "sangre", "both": true, "bend": 0.2, "label": "comandante / madre" }
+    ],
+    "references": ["maciocia:49-53", "liping:96-99"]
+  },
+  {
+    "id": "jinye-metabolismo",
+    "title": "Metabolismo de los líquidos (Jin Ye)",
+    "kind": "graph",
+    "intro": "El camino del agua por el cuerpo y los tres Jiao. Usa el recorrido guiado.",
+    "aspect": 1.0,
+    "nodes": [
+      { "id": "jiao_sup", "label": "Jiao superior", "sub": "«niebla»", "x": 0.5, "y": 0.07, "shape": "rect", "size": 0.16, "height": 0.03, "color": "#90A4AE", "detail": "Pecho: Corazón y Pulmón. Dispersa los líquidos como una niebla hacia la piel." },
+      { "id": "pulmon", "label": "Pulmón", "hanzi": "肺", "x": 0.5, "y": 0.23, "shape": "rect", "size": 0.1, "color": "#8D99A3", "detail": "**Dispersa** una parte hacia la piel (sudor) y **desciende** otra hacia el Riñón: «regula las vías del agua»." },
+      { "id": "piel", "label": "Piel · sudor", "x": 0.87, "y": 0.23, "shape": "rect", "size": 0.1, "color": "#B0BEC5", "detail": "Los Jin, ligeros, salen como sudor con el Qi defensivo." },
+      { "id": "jiao_med", "label": "Jiao medio", "sub": "«espuma»", "x": 0.13, "y": 0.42, "shape": "rect", "size": 0.11, "height": 0.03, "color": "#C9A75E", "detail": "Estómago y Bazo: maceran y transforman, como una espuma o cámara de fermentación." },
+      { "id": "estomago", "label": "Estómago", "hanzi": "胃", "x": 0.5, "y": 0.42, "shape": "rect", "size": 0.1, "color": "#C99A2E", "detail": "Recibe los líquidos con el alimento: es «el origen de los líquidos»." },
+      { "id": "bazo", "label": "Bazo", "hanzi": "脾", "x": 0.87, "y": 0.42, "shape": "rect", "size": 0.1, "color": "#C99A2E", "detail": "**Separa** lo puro de lo turbio y **sube** lo puro al Pulmón. Si falla: Humedad y Flema." },
+      { "id": "intestinos", "label": "Intestinos", "x": 0.5, "y": 0.6, "shape": "rect", "size": 0.1, "color": "#A1887F", "detail": "El Intestino Delgado separa de nuevo lo útil de lo turbio; el Grueso reabsorbe parte de los líquidos." },
+      { "id": "jiao_inf", "label": "Jiao inferior", "sub": "«pantano»", "x": 0.13, "y": 0.78, "shape": "rect", "size": 0.11, "height": 0.03, "color": "#5C7FA3", "detail": "Riñón, Vejiga e Intestinos: drena y elimina, como un pantano o canal de desagüe." },
+      { "id": "rinon", "label": "Riñón", "hanzi": "肾", "sub": "Yang vaporiza", "x": 0.5, "y": 0.78, "shape": "rect", "size": 0.1, "color": "#2D5D8A", "detail": "Gobierna el Agua: su Yang **vaporiza** y sube lo útil al Pulmón; envía lo turbio a la Vejiga." },
+      { "id": "vejiga", "label": "Vejiga", "hanzi": "膀胱", "x": 0.87, "y": 0.78, "shape": "rect", "size": 0.1, "color": "#3F6A92", "detail": "Almacena y, con la transformación del Qi del Riñón, excreta la orina." },
+      { "id": "sanjiao", "label": "San Jiao", "hanzi": "三焦", "x": 0.5, "y": 0.95, "shape": "rect", "size": 0.14, "height": 0.03, "color": "#6D4C41", "detail": "La vía de todos los líquidos y del Qi Original por los tres niveles del cuerpo." }
+    ],
+    "edges": [
+      { "from": "estomago", "to": "bazo" },
+      { "from": "bazo", "to": "pulmon", "bend": 0.2, "label": "lo puro sube" },
+      { "from": "pulmon", "to": "piel", "label": "dispersa" },
+      { "from": "estomago", "to": "intestinos" },
+      { "from": "pulmon", "to": "rinon", "bend": 0.55, "label": "desciende" },
+      { "from": "rinon", "to": "pulmon", "bend": 0.25, "dashed": true, "label": "vapor" },
+      { "from": "intestinos", "to": "rinon" },
+      { "from": "rinon", "to": "vejiga" }
+    ],
+    "steps": [
+      { "title": "Entrada", "text": "El Estómago recibe los líquidos; el Bazo separa lo puro de lo turbio y sube lo puro.", "focus": ["estomago", "bazo"] },
+      { "title": "Pulmón", "text": "El Pulmón dispersa una parte hacia la piel (sudor) y desciende el resto hacia el Riñón.", "focus": ["pulmon", "piel"] },
+      { "title": "Riñón y Vejiga", "text": "El Yang del Riñón vaporiza lo útil, que vuelve a subir; lo turbio va a la Vejiga para ser excretado.", "focus": ["rinon", "vejiga"] },
+      { "title": "Los tres Jiao", "text": "Niebla arriba, espuma en el medio, pantano abajo: el San Jiao es la vía de todo el proceso.", "focus": ["jiao_sup", "jiao_med", "jiao_inf", "sanjiao"] }
+    ],
+    "references": ["maciocia:53-56", "liping:100-103"]
+  },
+  {
+    "id": "sanbao",
+    "title": "Los Tres Tesoros (Sanbao)",
+    "kind": "graph",
+    "intro": "Esencia, Qi y Mente: de lo más denso a lo más sutil. En el Qigong y el Neidan se «refina» cada uno en el siguiente.",
+    "aspect": 1.0,
+    "nodes": [
+      { "id": "shen", "label": "Shen", "hanzi": "神", "sub": "Mente · Corazón", "x": 0.5, "y": 0.15, "color": "#7E57C2", "size": 0.1,
+        "detail": "La Mente o Espíritu: conciencia, pensamiento, memoria, sueño. Reside en el Corazón y se refleja en el brillo de los ojos. Dantian superior (entrecejo)." },
+      { "id": "qi", "label": "Qi", "hanzi": "气", "sub": "energía · pecho", "x": 0.5, "y": 0.5, "color": "#2E7D6B", "size": 0.1,
+        "detail": "La actividad que transforma la Esencia y alimenta la Mente. Dantian medio (centro del pecho)." },
+      { "id": "jing", "label": "Jing", "hanzi": "精", "sub": "Esencia · Riñón", "x": 0.5, "y": 0.85, "color": "#2D5D8A", "size": 0.1,
+        "detail": "La raíz material y heredada de la vida, guardada en el Riñón. Dantian inferior (bajo el ombligo)." },
+      { "id": "cielo", "label": "Cielo", "x": 0.15, "y": 0.15, "shape": "rect", "size": 0.08, "color": "#90A4AE", "detail": "La Mente corresponde al Cielo: lo más sutil e inmaterial." },
+      { "id": "hombre", "label": "Hombre", "x": 0.15, "y": 0.5, "shape": "rect", "size": 0.08, "color": "#90A4AE", "detail": "El Qi corresponde al Hombre, entre Cielo y Tierra." },
+      { "id": "tierra", "label": "Tierra", "x": 0.15, "y": 0.85, "shape": "rect", "size": 0.08, "color": "#90A4AE", "detail": "La Esencia corresponde a la Tierra: lo más denso, la base." }
+    ],
+    "edges": [
+      { "from": "jing", "to": "qi", "bend": 0.35, "label": "refinar Jing en Qi" },
+      { "from": "qi", "to": "shen", "bend": 0.35, "label": "refinar Qi en Shen" },
+      { "from": "shen", "to": "qi", "bend": 0.35, "dashed": true, "label": "la Mente dirige" },
+      { "from": "qi", "to": "jing", "bend": 0.35, "dashed": true, "label": "el Qi conserva" },
+      { "from": "cielo", "to": "shen", "noArrow": true, "dashed": true },
+      { "from": "hombre", "to": "qi", "noArrow": true, "dashed": true },
+      { "from": "tierra", "to": "jing", "noArrow": true, "dashed": true }
+    ],
+    "references": ["maciocia:41", "neidan_9_qigong:1-10"]
+  }
+]

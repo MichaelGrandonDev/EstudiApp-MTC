@@ -1,0 +1,126 @@
+[
+  {
+    "id": "zangfu-biaoli",
+    "title": "Zang Fu: parejas interior-exterior",
+    "kind": "graph",
+    "intro": "Por dentro, los Zang (Yin); por fuera, sus Fu (Yang), unidos por la relación Biao-Li. Enciende el ciclo de generación entre los Zang.",
+    "aspect": 1.0,
+    "nodes": [
+      { "id": "C", "label": "Corazón", "hanzi": "心", "x": 0.43, "y": 0.31, "size": 0.062, "color": "#C8473D", "detail": "Gobierna la Sangre y los vasos; alberga el **Shen**; se abre en la lengua; emoción: alegría. Funcionario: el **monarca**.", "ref": "maciocia:71" },
+      { "id": "PC", "label": "Pericardio", "hanzi": "心包", "x": 0.57, "y": 0.31, "size": 0.056, "color": "#D06A5F", "detail": "Envoltura protectora del Corazón; comparte sus funciones sobre la Sangre y la Mente. Funcionario: el **ministro consejero**.", "ref": "maciocia:105" },
+      { "id": "B", "label": "Bazo", "hanzi": "脾", "x": 0.69, "y": 0.44, "size": 0.062, "color": "#C99A2E", "detail": "Transforma y transporta; contiene la Sangre; controla músculos; alberga el **Yi**; emoción: preocupación. Funcionario: el **granero**.", "ref": "maciocia:91" },
+      { "id": "P", "label": "Pulmón", "hanzi": "肺", "x": 0.62, "y": 0.66, "size": 0.062, "color": "#8D99A3", "detail": "Gobierna el Qi y la respiración; dispersa y desciende; controla la piel; alberga el **Po**; emoción: tristeza. Funcionario: el **primer ministro**.", "ref": "maciocia:85" },
+      { "id": "R", "label": "Riñón", "hanzi": "肾", "x": 0.38, "y": 0.66, "size": 0.062, "color": "#2D5D8A", "detail": "Almacena la Esencia; gobierna el Agua; recibe el Qi; produce la Médula; alberga el **Zhi**; emoción: miedo. Funcionario: la **fortaleza**.", "ref": "maciocia:97" },
+      { "id": "H", "label": "Hígado", "hanzi": "肝", "x": 0.31, "y": 0.44, "size": 0.062, "color": "#3E8E5A", "detail": "Almacena la Sangre; asegura el libre flujo del Qi; controla los tendones; alberga el **Hun**; emoción: ira. Funcionario: el **general**.", "ref": "maciocia:77" },
+      { "id": "ID", "label": "Int. Delgado", "hanzi": "小肠", "x": 0.37, "y": 0.1, "shape": "rect", "size": 0.08, "color": "#E57368", "detail": "Recibe y separa lo puro de lo turbio. Pareja del Corazón.", "ref": "maciocia:116" },
+      { "id": "SJ", "label": "San Jiao", "hanzi": "三焦", "x": 0.63, "y": 0.1, "shape": "rect", "size": 0.08, "color": "#E08A7E", "detail": "Vía del Qi Original y de los líquidos. Pareja del Pericardio.", "ref": "maciocia:120" },
+      { "id": "E", "label": "Estómago", "hanzi": "胃", "x": 0.88, "y": 0.38, "shape": "rect", "size": 0.08, "color": "#D9B04F", "detail": "Descompone y madura; su Qi desciende; origen de los líquidos. Pareja del Bazo.", "ref": "maciocia:113" },
+      { "id": "IG", "label": "Int. Grueso", "hanzi": "大肠", "x": 0.74, "y": 0.86, "shape": "rect", "size": 0.08, "color": "#A7B1B9", "detail": "Recibe lo turbio, reabsorbe líquidos y excreta. Pareja del Pulmón.", "ref": "maciocia:117" },
+      { "id": "V", "label": "Vejiga", "hanzi": "膀胱", "x": 0.26, "y": 0.86, "shape": "rect", "size": 0.08, "color": "#4D7AA6", "detail": "Almacena y excreta la orina con el Qi del Riñón. Pareja del Riñón.", "ref": "maciocia:119" },
+      { "id": "VB", "label": "Vesícula", "hanzi": "胆", "x": 0.12, "y": 0.38, "shape": "rect", "size": 0.08, "color": "#5DA877", "detail": "Almacena la bilis; controla el juicio y la decisión. Pareja del Hígado.", "ref": "maciocia:118" }
+    ],
+    "layers": [
+      { "id": "biaoli", "name": "Biao-Li (Zang ↔ Fu)", "color": "#6D4C41", "on": true },
+      { "id": "sheng", "name": "Generación entre Zang", "color": "#2E8B57", "on": false }
+    ],
+    "edges": [
+      { "from": "C", "to": "ID", "layer": "biaoli", "both": true },
+      { "from": "PC", "to": "SJ", "layer": "biaoli", "both": true },
+      { "from": "B", "to": "E", "layer": "biaoli", "both": true },
+      { "from": "P", "to": "IG", "layer": "biaoli", "both": true },
+      { "from": "R", "to": "V", "layer": "biaoli", "both": true },
+      { "from": "H", "to": "VB", "layer": "biaoli", "both": true },
+      { "from": "H", "to": "C", "layer": "sheng", "bend": -0.2 },
+      { "from": "C", "to": "B", "layer": "sheng", "bend": -0.2 },
+      { "from": "B", "to": "P", "layer": "sheng", "bend": -0.2 },
+      { "from": "P", "to": "R", "layer": "sheng", "bend": -0.2 },
+      { "from": "R", "to": "H", "layer": "sheng", "bend": -0.2 }
+    ],
+    "references": ["maciocia:67-70", "liping:48-51"]
+  },
+  {
+    "id": "corazon-rinon",
+    "title": "Corazón y Riñón: el Fuego y el Agua",
+    "kind": "graph",
+    "intro": "El Fuego del Corazón baja a calentar el Agua; el Agua del Riñón sube a refrescar el Fuego. Mira qué ocurre cuando se separan.",
+    "aspect": 0.95,
+    "nodes": [
+      { "id": "corazon", "label": "Corazón", "hanzi": "心", "sub": "Fuego · Shen", "x": 0.5, "y": 0.14, "color": "#C8473D", "size": 0.09, "detail": "Fuego del Emperador: alberga la Mente. Su Fuego debe bajar hacia el Riñón." },
+      { "id": "rinon", "label": "Riñón", "hanzi": "肾", "sub": "Agua · Jing", "x": 0.5, "y": 0.84, "color": "#2D5D8A", "size": 0.09, "detail": "Agua y Esencia. Su Yin debe subir a refrescar el Corazón." },
+      { "id": "shen", "label": "Shen", "hanzi": "神", "x": 0.16, "y": 0.14, "shape": "rect", "size": 0.07, "color": "#7E57C2", "detail": "La Mente se apoya en la Esencia: «Mente y Esencia tienen una raíz común»." },
+      { "id": "jing", "label": "Jing", "hanzi": "精", "x": 0.16, "y": 0.84, "shape": "rect", "size": 0.07, "color": "#1E4E79", "detail": "La Esencia es la base material de la Mente." },
+      { "id": "desarmonia", "label": "Si se separan", "x": 0.83, "y": 0.5, "shape": "rect", "size": 0.14, "height": 0.1, "color": "#6D4C41", "layer": "pato",
+        "detail": "El Fuego sube sin control y el Agua no lo refresca: **insomnio, palpitaciones, ansiedad, sudor nocturno, boca seca, lumbago y rodillas débiles, acúfenos**. Suele deberse a vacío de Yin de Riñón." }
+    ],
+    "layers": [
+      { "id": "fisio", "name": "Comunicación normal", "color": "#2E7D6B", "on": true },
+      { "id": "pato", "name": "Desarmonía", "color": "#B23A48", "on": false }
+    ],
+    "edges": [
+      { "from": "corazon", "to": "rinon", "layer": "fisio", "bend": 0.35, "label": "el Fuego baja", "color": "#C8473D" },
+      { "from": "rinon", "to": "corazon", "layer": "fisio", "bend": 0.35, "label": "el Agua sube", "color": "#2D5D8A" },
+      { "from": "shen", "to": "jing", "both": true, "dashed": true, "noArrow": false },
+      { "from": "corazon", "to": "desarmonia", "layer": "pato", "dashed": true },
+      { "from": "rinon", "to": "desarmonia", "layer": "pato", "dashed": true }
+    ],
+    "references": ["maciocia:108-109", "maciocia:271"]
+  },
+  {
+    "id": "sanjiao",
+    "title": "San Jiao: los tres recalentadores",
+    "kind": "graph",
+    "intro": "Las tres divisiones del cuerpo y sus órganos. Toca cada nivel.",
+    "aspect": 1.05,
+    "nodes": [
+      { "id": "sup", "label": "Jiao superior", "sub": "«como una niebla»", "x": 0.2, "y": 0.18, "shape": "rect", "size": 0.16, "height": 0.07, "color": "#90A4AE", "detail": "Pecho y cabeza: **Corazón, Pulmón y Pericardio**. Dispersa el Qi y los líquidos como una niebla." },
+      { "id": "med", "label": "Jiao medio", "sub": "«como espuma»", "x": 0.2, "y": 0.5, "shape": "rect", "size": 0.16, "height": 0.07, "color": "#C9A75E", "detail": "Entre el diafragma y el ombligo: **Bazo y Estómago** (y Vesícula Biliar). Digiere y macera como una espuma." },
+      { "id": "inf", "label": "Jiao inferior", "sub": "«como un pantano»", "x": 0.2, "y": 0.82, "shape": "rect", "size": 0.16, "height": 0.07, "color": "#5C7FA3", "detail": "Bajo el ombligo: **Hígado, Riñón, Vejiga e Intestinos** (y Útero). Separa y excreta como un canal de desagüe." },
+      { "id": "C", "label": "Corazón", "x": 0.55, "y": 0.14, "shape": "rect", "size": 0.08, "color": "#C8473D" },
+      { "id": "P", "label": "Pulmón", "x": 0.78, "y": 0.14, "shape": "rect", "size": 0.08, "color": "#8D99A3" },
+      { "id": "PC", "label": "Pericardio", "x": 0.66, "y": 0.24, "shape": "rect", "size": 0.08, "color": "#D06A5F" },
+      { "id": "B", "label": "Bazo", "x": 0.55, "y": 0.5, "shape": "rect", "size": 0.08, "color": "#C99A2E" },
+      { "id": "E", "label": "Estómago", "x": 0.78, "y": 0.5, "shape": "rect", "size": 0.08, "color": "#D9B04F" },
+      { "id": "H", "label": "Hígado", "x": 0.5, "y": 0.78, "shape": "rect", "size": 0.07, "color": "#3E8E5A" },
+      { "id": "R", "label": "Riñón", "x": 0.66, "y": 0.78, "shape": "rect", "size": 0.07, "color": "#2D5D8A" },
+      { "id": "V", "label": "Vejiga", "x": 0.82, "y": 0.78, "shape": "rect", "size": 0.07, "color": "#4D7AA6" },
+      { "id": "I", "label": "Intestinos", "x": 0.66, "y": 0.9, "shape": "rect", "size": 0.09, "color": "#A1887F" }
+    ],
+    "edges": [
+      { "from": "inf", "to": "med", "label": "Qi Original", "dashed": true },
+      { "from": "med", "to": "sup", "dashed": true },
+      { "from": "sup", "to": "C", "noArrow": true },
+      { "from": "med", "to": "B", "noArrow": true },
+      { "from": "inf", "to": "H", "noArrow": true }
+    ],
+    "references": ["maciocia:120-124", "liping:84-87"]
+  },
+  {
+    "id": "transformacion-qi",
+    "title": "La transformación del Qi entre los órganos",
+    "kind": "graph",
+    "intro": "Eje central (Bazo-Estómago), rueda externa (Hígado-Pulmón) y raíz (Corazón-Riñón). Enciende cada capa.",
+    "aspect": 1.0,
+    "nodes": [
+      { "id": "corazon", "label": "Corazón", "hanzi": "心", "x": 0.5, "y": 0.1, "size": 0.07, "color": "#C8473D", "detail": "Su Fuego desciende hacia el Riñón." },
+      { "id": "pulmon", "label": "Pulmón", "hanzi": "肺", "x": 0.86, "y": 0.42, "size": 0.07, "color": "#8D99A3", "detail": "Su Qi **desciende** (por la derecha): frena el ascenso del Hígado." },
+      { "id": "higado", "label": "Hígado", "hanzi": "肝", "x": 0.14, "y": 0.58, "size": 0.07, "color": "#3E8E5A", "detail": "Su Qi **asciende** (por la izquierda) y fluye libremente." },
+      { "id": "bazo", "label": "Bazo", "hanzi": "脾", "x": 0.4, "y": 0.5, "size": 0.068, "color": "#C99A2E", "detail": "**Sube lo puro**: lleva el Qi de los alimentos al Pulmón y al Corazón." },
+      { "id": "estomago", "label": "Estómago", "hanzi": "胃", "x": 0.6, "y": 0.5, "size": 0.068, "color": "#D9B04F", "detail": "**Baja lo turbio**: envía el alimento a los intestinos." },
+      { "id": "rinon", "label": "Riñón", "hanzi": "肾", "x": 0.5, "y": 0.9, "size": 0.07, "color": "#2D5D8A", "detail": "Su Agua asciende hacia el Corazón; recibe el Qi que baja el Pulmón." }
+    ],
+    "layers": [
+      { "id": "eje", "name": "Eje central", "color": "#C99A2E", "on": true, "description": "Bazo sube, Estómago baja." },
+      { "id": "rueda", "name": "Rueda externa", "color": "#3E8E5A", "on": true, "description": "Hígado sube, Pulmón baja." },
+      { "id": "raiz", "name": "Raíz", "color": "#2D5D8A", "on": true, "description": "Fuego baja, Agua sube." }
+    ],
+    "edges": [
+      { "from": "bazo", "to": "corazon", "layer": "eje", "bend": 0.15, "label": "sube lo puro" },
+      { "from": "estomago", "to": "rinon", "layer": "eje", "bend": 0.15, "label": "baja lo turbio" },
+      { "from": "higado", "to": "corazon", "layer": "rueda", "bend": -0.35, "label": "asciende" },
+      { "from": "pulmon", "to": "rinon", "layer": "rueda", "bend": -0.35, "label": "desciende" },
+      { "from": "corazon", "to": "rinon", "layer": "raiz", "bend": 0.08, "dashed": true },
+      { "from": "rinon", "to": "corazon", "layer": "raiz", "bend": 0.08, "dashed": true }
+    ],
+    "references": ["maciocia:59-66"]
+  }
+]

@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 1c74109769ece414a821209e5721f6dc
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 3
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+    Any:
+      enabled: 0
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+    iOS:
+      enabled: 1
+      settings:
+        AddToEmbeddedBinaries: false
+        FrameworkDependencies: UniformTypeIdentifiers;
+  userData: estudiapp-v1
+  assetBundleName: 
+  assetBundleVariant: 

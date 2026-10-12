@@ -1,0 +1,229 @@
+[
+  {
+    "id": "liping",
+    "title": "El gran libro de la medicina china",
+    "author": "Li Ping",
+    "publisher": "Ediciones Martínez Roca, Barcelona",
+    "year": "2000 (2.ª ed. 2002)",
+    "role": "principal",
+    "description": "Manual práctico de diagnóstico y tratamiento con acupuntura, escrito tras doce años de docencia. Recorre Yin-Yang y 5 elementos, Zang-Fu, energía-sangre-líquidos, etiología, métodos de diagnóstico, meridianos y puntos. Es la columna vertebral de los ejes de fundamentos, fisiología, etiología y diagnóstico.",
+    "match": ["gran libro medicina china", "li ping"],
+    "pdfPages": 385
+  },
+  {
+    "id": "maciocia",
+    "title": "Los fundamentos de la medicina china",
+    "author": "Giovanni Maciocia",
+    "publisher": "Aneid Press / Elsevier (trad. de The Foundations of Chinese Medicine, 1989)",
+    "year": "1989",
+    "role": "principal",
+    "description": "El texto de referencia en Occidente para la teoría de la MTC: Yin-Yang, Cinco Elementos, sustancias vitales, transformación del Qi, funciones de los órganos, causas de enfermedad, diagnóstico, identificación de síndromes y principios de tratamiento.",
+    "match": ["fundamentos medicina china", "maciocia fundamentos", "foundations chinese medicine"],
+    "pdfPages": 554
+  },
+  {
+    "id": "suwen",
+    "title": "Sù Wèn — Huáng Dì Nèi Jīng (Preguntas sencillas del Canon Interno del Emperador Amarillo)",
+    "author": "Clásico anónimo (s. II a. C. aprox.), trad. Julio García",
+    "publisher": "",
+    "year": "",
+    "role": "clasico",
+    "description": "Primera parte del Canon Interno del Emperador Amarillo: 81 capítulos de diálogo entre Huang Di y su médico Qi Bo sobre Yin-Yang, estaciones, órganos, pulso, enfermedad y punción. Fuente de la que beben todos los demás libros.",
+    "match": ["su wen", "suwen", "nei jing", "emperador amarillo"],
+    "pdfPages": 429
+  },
+  {
+    "id": "focks",
+    "title": "Atlas de acupuntura",
+    "author": "Claudia Focks",
+    "publisher": "Elsevier Masson",
+    "year": "2009",
+    "role": "principal",
+    "description": "Atlas fotográfico de localización: sistema de meridianos (jing luo), medidas cun, orientación anatómica y los 361 puntos con localización, punción, acciones e indicaciones. Referencia para el eje de canales y la práctica de punción.",
+    "match": ["atlas acupuntura", "focks"],
+    "pdfPages": 718
+  },
+  {
+    "id": "practica",
+    "title": "La práctica de la medicina china",
+    "author": "Giovanni Maciocia",
+    "publisher": "Elsevier",
+    "year": "",
+    "role": "complementaria",
+    "description": "Tratamiento de las enfermedades con acupuntura y fitoterapia: para el paso de la teoría a la clínica.",
+    "match": ["practica medicina china", "prac mtc"],
+    "pdfPages": 1517
+  },
+  {
+    "id": "lengua",
+    "title": "Diagnóstico por la lengua en medicina china",
+    "author": "Giovanni Maciocia",
+    "publisher": "Eastland Press / Aneid",
+    "year": "1987",
+    "role": "complementaria",
+    "description": "Color, forma, saburra y humedad de la lengua; mapa de zonas y casos.",
+    "match": ["diag lengua", "diagnostico lengua"],
+    "pdfPages": 238
+  },
+  {
+    "id": "pulso",
+    "title": "Diagnóstico por el pulso: una guía clínica",
+    "author": "",
+    "publisher": "",
+    "year": "",
+    "role": "complementaria",
+    "description": "Posiciones, niveles y cualidades del pulso con su interpretación clínica.",
+    "match": ["diagnostico pulso"],
+    "pdfPages": 430
+  },
+  {
+    "id": "psique",
+    "title": "La psique en la medicina china",
+    "author": "Giovanni Maciocia",
+    "publisher": "Elsevier Health Sciences Spain",
+    "year": "2011",
+    "role": "complementaria",
+    "description": "Shen, Hun, Po, Yi y Zhi; tratamiento de las desarmonías emocionales y mentales con acupuntura y fitoterapia.",
+    "match": ["psique medicina china", "psique maccio"],
+    "pdfPages": 686
+  },
+  {
+    "id": "compendio",
+    "title": "Compendio de medicina china",
+    "author": "Eric Marié",
+    "publisher": "Edaf",
+    "year": "",
+    "role": "complementaria",
+    "description": "Visión de conjunto, ordenada y concisa, de teoría y práctica.",
+    "match": ["compendio medicina china"],
+    "pdfPages": 325
+  },
+  {
+    "id": "acupmoxi",
+    "title": "Medicina tradicional china: acupuntura y moxibustión",
+    "author": "",
+    "publisher": "",
+    "year": "",
+    "role": "complementaria",
+    "description": "Manual de acupuntura y moxibustión de enfoque docente.",
+    "match": ["mtc acup moxi", "acupuntura moxibustion"],
+    "pdfPages": 299
+  },
+  {
+    "id": "neidan_1_fund_mtc",
+    "title": "Fundamentos de MTC (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Bases generales, Taiji (Yin-Yang), Wuxing y sustancias vitales.",
+    "match": ["fund mtc"],
+    "pdfPages": 25
+  },
+  {
+    "id": "neidan_2_fisiologiaa",
+    "title": "Fisiología china (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Teoría de órganos y entrañas, órganos Yin, vísceras Yang y entrañas extraordinarias.",
+    "match": ["fisiologia"],
+    "pdfPages": 25
+  },
+  {
+    "id": "neidan_3_etiologia",
+    "title": "Etiología (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Salud, enfermedad, Xie Qi y las causas de enfermedad.",
+    "match": ["etiologia"],
+    "pdfPages": 24
+  },
+  {
+    "id": "neidan_4_puncion",
+    "title": "Técnicas de acupuntura (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Agujas, posiciones, ángulos, profundidad, De Qi, manipulaciones y precauciones.",
+    "match": ["puncion"],
+    "pdfPages": 35
+  },
+  {
+    "id": "neidan_5_teo_canales",
+    "title": "Anatomía de canales I (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Jing Luo, 12 canales principales, circuito circadiano, Du Mai y Ren Mai.",
+    "match": ["teo canales"],
+    "pdfPages": 28
+  },
+  {
+    "id": "neidan_6_ventosas",
+    "title": "Ventosaterapia (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Tipos de ventosas, técnicas, indicaciones y contraindicaciones.",
+    "match": ["ventosas"],
+    "pdfPages": 21
+  },
+  {
+    "id": "neidan_7_moxib",
+    "title": "Moxibustión (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "La moxa, sus formas de aplicación, indicaciones y precauciones.",
+    "match": ["moxib"],
+    "pdfPages": 14
+  },
+  {
+    "id": "neidan_8_plan_ter",
+    "title": "Plan terapéutico (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Generalidades y estructura del plan terapéutico.",
+    "match": ["plan ter"],
+    "pdfPages": 14
+  },
+  {
+    "id": "neidan_9_qigong",
+    "title": "Qigong médico (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Conceptos básicos de Qigong, regulaciones, Dantian y práctica.",
+    "match": ["9 qigong"],
+    "pdfPages": 54
+  },
+  {
+    "id": "neidan_11_met_diag_1",
+    "title": "Métodos de diagnóstico I (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Los cuatro métodos y la observación.",
+    "match": ["met diag 1"],
+    "pdfPages": 13
+  },
+  {
+    "id": "neidan_12_met_diag_2",
+    "title": "Métodos de diagnóstico II: la lengua (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Glosodiagnosis: cuerpo, color, forma y saburra.",
+    "match": ["met diag 2"],
+    "pdfPages": 24
+  },
+  {
+    "id": "neidan_13_met_diag_3",
+    "title": "Métodos de diagnóstico III: audición y olfacción (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Voz, respiración, tos y olores.",
+    "match": ["met diag 3"],
+    "pdfPages": 19
+  },
+  {
+    "id": "neidan_14_met_diag_4",
+    "title": "Métodos de diagnóstico IV: palpación (apuntes)",
+    "author": "Escuela Neidan",
+    "role": "apuntes",
+    "description": "Pulso, piel, miembros, tórax, abdomen y puntos.",
+    "match": ["met diag 4"],
+    "pdfPages": 7
+  }
+]

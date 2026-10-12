@@ -1,0 +1,21 @@
+# Unity
+EstudiAppMTC/[Ll]ibrary/
+EstudiAppMTC/[Tt]emp/
+EstudiAppMTC/[Oo]bj/
+EstudiAppMTC/[Ll]ogs/
+EstudiAppMTC/[Uu]ser[Ss]ettings/
+EstudiAppMTC/Builds/
+EstudiAppMTC/*.csproj
+EstudiAppMTC/*.sln
+.DS_Store
+
+# Texto extraído de los libros: sólo para redactar y citar, no se distribuye.
+Tools/knowledge/cache/
+
+# Herramientas
+Tools/logs/
+# Descargas originales de PDFium: los binarios que usa la app ya están en EstudiAppMTC/Assets/Plugins.
+Tools/vendor/pdfium-*/
+Tools/DomainTests/bin/
+Tools/DomainTests/obj/
+__pycache__/

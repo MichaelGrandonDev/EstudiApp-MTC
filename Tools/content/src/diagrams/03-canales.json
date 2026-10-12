@@ -1,0 +1,114 @@
+[
+  {
+    "id": "canales-circulacion",
+    "title": "El circuito de los doce canales",
+    "kind": "graph",
+    "intro": "El Qi recorre tres vueltas: tórax → mano → cabeza → pie → tórax. Avanza paso a paso.",
+    "aspect": 1.0,
+    "nodes": [
+      { "id": "torax", "label": "Tórax", "sub": "unión Yin-Yin", "x": 0.16, "y": 0.5, "size": 0.085, "color": "#7E57C2", "detail": "Aquí los Yin del pie entregan el Qi a los Yin de la mano: Bazo → Corazón, Riñón → Pericardio, Hígado → Pulmón." },
+      { "id": "mano", "label": "Mano", "sub": "unión Yin-Yang", "x": 0.5, "y": 0.14, "size": 0.085, "color": "#C8473D", "detail": "En los dedos, cada Yin de la mano pasa a su pareja Yang: Pulmón → Intestino Grueso, Corazón → Intestino Delgado, Pericardio → San Jiao." },
+      { "id": "cabeza", "label": "Cabeza", "sub": "unión Yang-Yang", "x": 0.84, "y": 0.5, "size": 0.085, "color": "#E0A030", "detail": "En la cara se unen los Yang del mismo nivel: Intestino Grueso → Estómago (Yang Ming), Intestino Delgado → Vejiga (Tai Yang), San Jiao → Vesícula (Shao Yang)." },
+      { "id": "pie", "label": "Pie", "sub": "unión Yang-Yin", "x": 0.5, "y": 0.86, "size": 0.085, "color": "#2D5D8A", "detail": "En los dedos del pie, cada Yang pasa a su pareja Yin: Estómago → Bazo, Vejiga → Riñón, Vesícula → Hígado." }
+    ],
+    "layers": [
+      { "id": "yin", "name": "Canales Yin", "color": "#2D5D8A", "on": true },
+      { "id": "yang", "name": "Canales Yang", "color": "#C8473D", "on": true }
+    ],
+    "edges": [
+      { "from": "torax", "to": "mano", "layer": "yin", "bend": 0.15, "label": "Yin de la mano", "detail": "Pulmón, Corazón y Pericardio: cara interna del brazo." },
+      { "from": "mano", "to": "cabeza", "layer": "yang", "bend": 0.15, "label": "Yang de la mano", "detail": "Intestino Grueso, Intestino Delgado y San Jiao: cara externa del brazo." },
+      { "from": "cabeza", "to": "pie", "layer": "yang", "bend": 0.15, "label": "Yang del pie", "detail": "Estómago, Vejiga y Vesícula Biliar: cara anterior, posterior y lateral." },
+      { "from": "pie", "to": "torax", "layer": "yin", "bend": 0.15, "label": "Yin del pie", "detail": "Bazo, Riñón e Hígado: cara interna de la pierna." }
+    ],
+    "steps": [
+      { "title": "Primera vuelta", "text": "**Pulmón** (tórax→mano) → **Intestino Grueso** (mano→cabeza) → **Estómago** (cabeza→pie) → **Bazo** (pie→tórax). Nivel Tai Yin / Yang Ming.", "focus": ["torax", "mano", "cabeza", "pie"] },
+      { "title": "Segunda vuelta", "text": "**Corazón** → **Intestino Delgado** → **Vejiga** → **Riñón**. Nivel Shao Yin / Tai Yang.", "focus": ["torax", "mano", "cabeza", "pie"] },
+      { "title": "Tercera vuelta", "text": "**Pericardio** → **San Jiao** → **Vesícula Biliar** → **Hígado**, que devuelve el Qi al Pulmón. Nivel Jue Yin / Shao Yang.", "focus": ["torax", "mano", "cabeza", "pie"] }
+    ],
+    "references": ["focks:8-12", "liping:352-361"]
+  },
+  {
+    "id": "reloj-organos",
+    "title": "Reloj de los órganos",
+    "kind": "ring",
+    "intro": "Cada canal tiene dos horas de máxima actividad. Toca un sector; la aguja marca la hora actual.",
+    "aspect": 1.0,
+    "showClock": true,
+    "startHour": 3,
+    "segments": [
+      { "id": "P", "label": "Pulmón", "hanzi": "肺", "sub": "3–5 h", "hour": 3, "color": "#8D99A3", "detail": "Máximo del Pulmón: la respiración profunda del amanecer. Tos o asma a esta hora orientan al Pulmón." },
+      { "id": "IG", "label": "Int. Grueso", "hanzi": "大肠", "sub": "5–7 h", "hour": 5, "color": "#A7B1B9", "detail": "Hora natural de evacuar." },
+      { "id": "E", "label": "Estómago", "hanzi": "胃", "sub": "7–9 h", "hour": 7, "color": "#D9B04F", "detail": "Momento ideal para el desayuno, la comida más importante." },
+      { "id": "B", "label": "Bazo", "hanzi": "脾", "sub": "9–11 h", "hour": 9, "color": "#C99A2E", "detail": "Transforma y distribuye lo comido; buena hora para el trabajo mental." },
+      { "id": "C", "label": "Corazón", "hanzi": "心", "sub": "11–13 h", "hour": 11, "color": "#C8473D", "detail": "Máximo del Yang del día." },
+      { "id": "ID", "label": "Int. Delgado", "hanzi": "小肠", "sub": "13–15 h", "hour": 13, "color": "#E57368", "detail": "Separa lo puro de lo turbio tras la comida." },
+      { "id": "V", "label": "Vejiga", "hanzi": "膀胱", "sub": "15–17 h", "hour": 15, "color": "#4D7AA6", "detail": "Mínimo del Pulmón; máximo de la Vejiga." },
+      { "id": "R", "label": "Riñón", "hanzi": "肾", "sub": "17–19 h", "hour": 17, "color": "#2D5D8A", "detail": "El cansancio de la tarde puede reflejar debilidad del Riñón." },
+      { "id": "PC", "label": "Pericardio", "hanzi": "心包", "sub": "19–21 h", "hour": 19, "color": "#D06A5F", "detail": "Hora de relación y calma." },
+      { "id": "SJ", "label": "San Jiao", "hanzi": "三焦", "sub": "21–23 h", "hour": 21, "color": "#E08A7E", "detail": "Preparación para el descanso." },
+      { "id": "VB", "label": "Vesícula", "hanzi": "胆", "sub": "23–1 h", "hour": 23, "color": "#5DA877", "detail": "Mínimo del Corazón. Dormir antes de esta hora favorece la regeneración." },
+      { "id": "H", "label": "Hígado", "hanzi": "肝", "sub": "1–3 h", "hour": 1, "color": "#3E8E5A", "detail": "La Sangre vuelve al Hígado. Despertar a esta hora orienta al Hígado." }
+    ],
+    "references": ["focks:7-8", "neidan_5_teo_canales:10"]
+  },
+  {
+    "id": "vasos-extraordinarios",
+    "title": "Los ocho vasos y sus puntos de apertura",
+    "kind": "graph",
+    "intro": "Los ocho vasos funcionan en cuatro parejas. Cada línea une dos vasos y sus puntos de apertura.",
+    "aspect": 0.9,
+    "nodes": [
+      { "id": "du", "label": "Du Mai", "hanzi": "督脉", "sub": "ID-3 Houxi", "x": 0.24, "y": 0.13, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#C8473D", "detail": "Mar de los canales Yang; columna y cerebro." },
+      { "id": "yangqiao", "label": "Yang Qiao Mai", "hanzi": "阳跷脉", "sub": "V-62 Shenmai", "x": 0.76, "y": 0.13, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#E0A030", "detail": "Movimiento, vigilia, cara externa de la pierna; insomnio, ojos que no cierran." },
+      { "id": "ren", "label": "Ren Mai", "hanzi": "任脉", "sub": "P-7 Lieque", "x": 0.24, "y": 0.38, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#2D5D8A", "detail": "Mar de los canales Yin; útero, concepción." },
+      { "id": "yinqiao", "label": "Yin Qiao Mai", "hanzi": "阴跷脉", "sub": "R-6 Zhaohai", "x": 0.76, "y": 0.38, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#4D7AA6", "detail": "Sueño, ojos, cara interna de la pierna; somnolencia." },
+      { "id": "chong", "label": "Chong Mai", "hanzi": "冲脉", "sub": "B-4 Gongsun", "x": 0.24, "y": 0.63, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#8E3B46", "detail": "Mar de la Sangre y de los doce canales; menstruación, Qi que sube hacia el pecho." },
+      { "id": "yinwei", "label": "Yin Wei Mai", "hanzi": "阴维脉", "sub": "PC-6 Neiguan", "x": 0.76, "y": 0.63, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#7E57C2", "detail": "Une los canales Yin; dolor de pecho, ansiedad." },
+      { "id": "dai", "label": "Dai Mai", "hanzi": "带脉", "sub": "VB-41 Zulinqi", "x": 0.24, "y": 0.88, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#3E8E5A", "detail": "El cinturón: une los canales verticales; flujo vaginal, cintura." },
+      { "id": "yangwei", "label": "Yang Wei Mai", "hanzi": "阳维脉", "sub": "TR-5 Waiguan", "x": 0.76, "y": 0.88, "shape": "rect", "size": 0.15, "height": 0.08, "color": "#5DA877", "detail": "Une los canales Yang; exterior, fiebre y escalofríos, costados." }
+    ],
+    "edges": [
+      { "from": "du", "to": "yangqiao", "both": true, "label": "espalda, nuca, ojo interno" },
+      { "from": "ren", "to": "yinqiao", "both": true, "label": "pulmón, garganta, abdomen" },
+      { "from": "chong", "to": "yinwei", "both": true, "label": "corazón, pecho, estómago" },
+      { "from": "dai", "to": "yangwei", "both": true, "label": "costados, oído, ojo externo" }
+    ],
+    "references": ["focks:24-28", "maciocia:369-380"]
+  },
+  {
+    "id": "cinco-shu",
+    "title": "Los cinco puntos Shu antiguos",
+    "kind": "graph",
+    "intro": "De la punta de los dedos al codo o la rodilla, el Qi crece como el agua. Enciende los elementos de los canales Yin o Yang.",
+    "aspect": 0.7,
+    "nodes": [
+      { "id": "jing", "label": "Jing", "hanzi": "井", "sub": "pozo", "x": 0.1, "y": 0.5, "size": 0.06, "color": "#90CAF9", "detail": "El Qi **brota**. En la punta de los dedos. Indicado en plenitud bajo el corazón y urgencias; cambia el estado mental." },
+      { "id": "ying", "label": "Ying", "hanzi": "荥", "sub": "manantial", "x": 0.3, "y": 0.5, "size": 0.068, "color": "#64B5F6", "detail": "El Qi **corre como un hilo**. Indicado en calor y cambios de color de la tez." },
+      { "id": "shu", "label": "Shu", "hanzi": "输", "sub": "arroyo", "x": 0.5, "y": 0.5, "size": 0.076, "color": "#42A5F5", "detail": "El Qi **fluye con fuerza**. Pesadez y dolor articular. En los canales Yin coincide con el punto Yuan." },
+      { "id": "jingr", "label": "Jing", "hanzi": "经", "sub": "río", "x": 0.7, "y": 0.5, "size": 0.084, "color": "#1E88E5", "detail": "El Qi **corre ancho**. Tos, disnea, cambios de la voz." },
+      { "id": "he", "label": "He", "hanzi": "合", "sub": "mar", "x": 0.9, "y": 0.5, "size": 0.092, "color": "#1565C0", "detail": "El Qi **entra en el mar**, hacia lo profundo. Qi rebelde, trastornos del Estómago y los intestinos." },
+      { "id": "y1", "label": "Madera", "x": 0.1, "y": 0.84, "shape": "rect", "size": 0.08, "color": "#3E8E5A", "layer": "yin" },
+      { "id": "y2", "label": "Fuego", "x": 0.3, "y": 0.84, "shape": "rect", "size": 0.08, "color": "#C8473D", "layer": "yin" },
+      { "id": "y3", "label": "Tierra", "x": 0.5, "y": 0.84, "shape": "rect", "size": 0.08, "color": "#C99A2E", "layer": "yin" },
+      { "id": "y4", "label": "Metal", "x": 0.7, "y": 0.84, "shape": "rect", "size": 0.08, "color": "#8D99A3", "layer": "yin" },
+      { "id": "y5", "label": "Agua", "x": 0.9, "y": 0.84, "shape": "rect", "size": 0.08, "color": "#2D5D8A", "layer": "yin" },
+      { "id": "g1", "label": "Metal", "x": 0.1, "y": 0.16, "shape": "rect", "size": 0.08, "color": "#8D99A3", "layer": "yang" },
+      { "id": "g2", "label": "Agua", "x": 0.3, "y": 0.16, "shape": "rect", "size": 0.08, "color": "#2D5D8A", "layer": "yang" },
+      { "id": "g3", "label": "Madera", "x": 0.5, "y": 0.16, "shape": "rect", "size": 0.08, "color": "#3E8E5A", "layer": "yang" },
+      { "id": "g4", "label": "Fuego", "x": 0.7, "y": 0.16, "shape": "rect", "size": 0.08, "color": "#C8473D", "layer": "yang" },
+      { "id": "g5", "label": "Tierra", "x": 0.9, "y": 0.16, "shape": "rect", "size": 0.08, "color": "#C99A2E", "layer": "yang" }
+    ],
+    "layers": [
+      { "id": "yin", "name": "Elementos (canales Yin)", "color": "#2D5D8A", "on": false },
+      { "id": "yang", "name": "Elementos (canales Yang)", "color": "#C8473D", "on": false }
+    ],
+    "edges": [
+      { "from": "jing", "to": "ying" },
+      { "from": "ying", "to": "shu" },
+      { "from": "shu", "to": "jingr" },
+      { "from": "jingr", "to": "he" }
+    ],
+    "references": ["maciocia:349-358", "liping:394-399"]
+  }
+]
