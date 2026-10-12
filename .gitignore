@@ -8,6 +8,9 @@ EstudiAppMTC/Builds/
 EstudiAppMTC/*.csproj
 EstudiAppMTC/*.sln
 EstudiAppMTC/MemoryCaptures/
+# Restos de la compilación de Android (Gradle/IL2CPP)
+EstudiAppMTC/.utmp/
+EstudiAppMTC/build/
 *.apk
 *.aab
 *.keystore

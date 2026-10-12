@@ -4,6 +4,7 @@
 Salida (Assets/_Project/Branding):
   AppIcon.png      1024 px a sangre, para iOS y Android (el sistema recorta la forma)
   AppIcon-mac.png  1024 px con la forma redondeada y el margen que usan los iconos de macOS
+  AppIcon-android-bg.png / AppIcon-android-fg.png  capas del icono adaptativo de Android
 Uso: python3 Tools/branding/make_icon.py
 """
 import math
@@ -46,26 +47,37 @@ def taiji(draw, cx, cy, r):
     draw.ellipse(box(cx, cy, r), outline=PAPER, width=round(r * 0.035))
 
 
-def artwork(size):
+def background(size, scale=1.0):
+    """Fondo noche con el halo de jade; `scale` encoge el halo junto con el emblema."""
     img = gradient(size).convert("RGBA")
     glow = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    ImageDraw.Draw(glow).ellipse([size * 0.16, size * 0.16, size * 0.84, size * 0.84], fill=JADE + (110,))
-    img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(size * 0.06)))
+    c, g = size / 2, size * 0.34 * scale
+    ImageDraw.Draw(glow).ellipse([c - g, c - g, c + g, c + g], fill=JADE + (110,))
+    img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(size * 0.06 * scale)))
+    return img
 
+
+def emblem(img, scale=1.0):
+    """Anillos, Taiji y puntos dorados centrados; `scale` es su tamaño relativo al lienzo."""
     draw = ImageDraw.Draw(img)
-    c = size / 2
-    ring = size * 0.335
-    draw.ellipse([c - ring, c - ring, c + ring, c + ring], outline=JADE, width=round(size * 0.028))
-    ring_gold = ring + size * 0.03
-    draw.ellipse([c - ring_gold, c - ring_gold, c + ring_gold, c + ring_gold], outline=GOLD, width=round(size * 0.006))
-    taiji(draw, c, c, size * 0.29)
+    c = img.width / 2
+    k = img.width * scale
+    ring = k * 0.335
+    draw.ellipse([c - ring, c - ring, c + ring, c + ring], outline=JADE, width=round(k * 0.028))
+    ring_gold = ring + k * 0.03
+    draw.ellipse([c - ring_gold, c - ring_gold, c + ring_gold, c + ring_gold], outline=GOLD, width=round(k * 0.006))
+    taiji(draw, c, c, k * 0.29)
     for i in range(8):
         a = math.radians(-90 + i * 45)
-        rr = ring_gold + size * 0.045
+        rr = ring_gold + k * 0.045
         x, y = c + rr * math.cos(a), c + rr * math.sin(a)
-        d = size * 0.011
+        d = k * 0.011
         draw.ellipse([x - d, y - d, x + d, y + d], fill=GOLD)
     return img
+
+
+def artwork(size):
+    return emblem(background(size))
 
 
 def rounded_mask(size, inset, radius):
@@ -91,6 +103,13 @@ def main():
     tile.paste(inner, (inset, inset))
     canvas.paste(tile, (0, 0), rounded_mask(S, inset, radius))
     canvas.resize((1024, 1024), Image.LANCZOS).save(OUT / "AppIcon-mac.png")
+
+    # Android adaptativo: el lanzador sólo garantiza el círculo central de 66/108 de cada capa,
+    # así que el emblema (0,84 del lienzo con los puntos dorados) se reduce para caber entero.
+    scale = 0.7
+    background(S, scale).resize((1024, 1024), Image.LANCZOS).convert("RGB").save(OUT / "AppIcon-android-bg.png")
+    fg = emblem(Image.new("RGBA", (S, S), (0, 0, 0, 0)), scale)
+    fg.resize((1024, 1024), Image.LANCZOS).save(OUT / "AppIcon-android-fg.png")
     print("Iconos ->", OUT)
 
 

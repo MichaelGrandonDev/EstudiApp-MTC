@@ -128,11 +128,38 @@ namespace EstudiApp.EditorTools
             if (square == null)
                 return;
             PlayerSettings.SetIcons(UnityEditor.Build.NamedBuildTarget.Unknown, new[] { square }, UnityEditor.IconKind.Any);
+            ConfigureAndroidIcons(square);
             if (mac == null)
                 return;
             var standalone = UnityEditor.Build.NamedBuildTarget.Standalone;
             var sizes = PlayerSettings.GetIconSizes(standalone, UnityEditor.IconKind.Any);
             PlayerSettings.SetIcons(standalone, Enumerable.Repeat(mac, sizes.Length).ToArray(), UnityEditor.IconKind.Any);
+        }
+
+        /// <summary>
+        /// Android 8+ usa el icono adaptativo (fondo + emblema dentro de la zona segura); sin él Unity pone uno en blanco.
+        /// Los tipos se buscan por nombre para no depender del módulo de Android al compilar.
+        /// </summary>
+        private static void ConfigureAndroidIcons(Texture2D square)
+        {
+            var background = LoadIcon(Root + "/Branding/AppIcon-android-bg.png");
+            var foreground = LoadIcon(Root + "/Branding/AppIcon-android-fg.png");
+            var android = UnityEditor.Build.NamedBuildTarget.Android;
+            foreach (var kind in PlayerSettings.GetSupportedIconKinds(android))
+            {
+                var name = kind.ToString();
+                Texture2D[] layers;
+                if (name == "Adaptive" && background != null && foreground != null)
+                    layers = new[] { background, foreground };
+                else if (name == "Legacy" || name == "Round")
+                    layers = new[] { square };
+                else
+                    continue;
+                var icons = PlayerSettings.GetPlatformIcons(android, kind);
+                foreach (var icon in icons)
+                    icon.SetTextures(layers);
+                PlayerSettings.SetPlatformIcons(android, kind, icons);
+            }
         }
 
         private static Texture2D LoadIcon(string path)
