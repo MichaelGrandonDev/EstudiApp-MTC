@@ -66,6 +66,13 @@ namespace EstudiApp.UI.Pages
 
             Section("Acerca de");
             Root.Append(El.Text($"{AppConfig.AppName} · versión {Application.version}", "setting-help"));
+            var author = Root.Append(El.Row("credit"));
+            author.Append(new TaijiMark()).AddToClassList("credit__logo");
+            var authorText = author.Append(El.Div("credit__text"));
+            authorText.Append(El.Text("Creada por", "credit__label"));
+            authorText.Append(El.Text(AppConfig.Author, "credit__name"));
+            author.Append(El.Spacer());
+            author.Append(El.Btn("GitHub", AppConfig.OpenAuthorPage, "btn", "btn--ghost", "btn--small")).tooltip = AppConfig.AuthorUrl;
             Root.Append(El.Text("Contenido elaborado con palabras propias a partir de Li Ping (<i>El gran libro de la medicina china</i>), Giovanni Maciocia (<i>Los fundamentos de la medicina china</i>), el <i>Su Wen</i>, Claudia Focks (<i>Atlas de acupuntura</i>) y los apuntes de la Escuela Neidan. Cada lección cita libro y página.", "setting-help"));
             Root.Append(El.Text("EstudiApp MTC es una herramienta de estudio. No sustituye la formación presencial ni el diagnóstico o tratamiento de un profesional de la salud.", "setting-help", "setting-help--warn"));
             Root.Append(El.Text("Tipografías Outfit, Cormorant Garamond y Noto Sans SC (SIL Open Font License). Lector de PDF basado en PDFium (BSD/Apache 2.0).", "setting-help"));

@@ -10,6 +10,11 @@ namespace EstudiApp.Core
     public static class AppConfig
     {
         public const string AppName = "EstudiApp MTC";
+        public const string Author = "MichaelGrandonDev";
+        public const string AuthorUrl = "https://github.com/MichaelGrandonDev";
+        public static string Credit => "Creada por " + Author;
+
+        public static void OpenAuthorPage() => UnityEngine.Application.OpenURL(AuthorUrl);
 
         public static AccessMode DefaultMode =>
 #if ESTUDIAPP_PLANS

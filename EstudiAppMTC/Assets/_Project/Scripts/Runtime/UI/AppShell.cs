@@ -76,6 +76,7 @@ namespace EstudiApp.UI
             logo.AddToClassList("loading__logo");
             _loading.Append(El.Text(AppConfig.AppName, "loading__title"));
             _loading.Append(El.Text("Cargando el temario…", "loading__text"));
+            _loading.Append(El.Text(AppConfig.Credit, "loading__credit"));
         }
 
         /// <summary>Copia de PanelSettings con la escala de cada plataforma y la fuente china como respaldo.</summary>
@@ -158,6 +159,10 @@ namespace EstudiApp.UI
             nav.Append(El.Spacer()).AddToClassList("nav__spacer");
             nav.Append(El.IconBtn(IconKind.Search, "Buscar", () => Push(new SearchPage()), "nav__btn", "nav__btn--secondary"));
             nav.Append(El.IconBtn(IconKind.Settings, "Ajustes", () => Push(new SettingsPage()), "nav__btn", "nav__btn--secondary"));
+            var credit = nav.Append(El.Btn(string.Empty, AppConfig.OpenAuthorPage, "nav__credit"));
+            credit.tooltip = AppConfig.AuthorUrl;
+            credit.Append(El.Text("Creada por", "nav__credit-label")).pickingMode = PickingMode.Ignore;
+            credit.Append(El.Text(AppConfig.Author, "nav__credit-name")).pickingMode = PickingMode.Ignore;
 
             var main = _app.Append(El.Div("main"));
             var bar = main.Append(El.Div("topbar"));
@@ -408,6 +413,7 @@ namespace EstudiApp.UI
             body.Append(El.Text("• Cada lección se abre al aprobar la anterior (70 %). Si ya sabes, activa el <b>modo libre</b> en Ajustes.", "dialog__text"));
             body.Append(El.Text("• Sube tus libros en PDF a la Biblioteca: las citas de las lecciones abrirán la página exacta.", "dialog__text"));
             body.Append(El.Text("• Es una versión de prueba: todo el contenido está abierto.", "dialog__text"));
+            body.Append(El.Text($"{AppConfig.Credit} · {AppConfig.AuthorUrl.Replace("https://", "")}", "dialog__credit"));
         }
 
         // ---- Acciones compartidas -----------------------------------------------------------------------------

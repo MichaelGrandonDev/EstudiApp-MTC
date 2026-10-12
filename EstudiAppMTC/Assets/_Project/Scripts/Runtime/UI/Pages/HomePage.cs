@@ -128,6 +128,11 @@ namespace EstudiApp.UI.Pages
             var path = Root.Append(El.Div("mini-path"));
             foreach (var axis in curriculum.Axes.OrderBy(a => a.Level))
                 path.Add(PathPage.AxisCard(Shell, axis, compact: true));
+
+            var credit = Root.Append(El.Btn(string.Empty, Core.AppConfig.OpenAuthorPage, "home-credit"));
+            credit.tooltip = Core.AppConfig.AuthorUrl;
+            credit.Append(El.Text($"{Core.AppConfig.AppName} · {Core.AppConfig.Credit}", "home-credit__text")).pickingMode = PickingMode.Ignore;
+            credit.Append(El.Text(Core.AppConfig.AuthorUrl.Replace("https://", ""), "home-credit__url")).pickingMode = PickingMode.Ignore;
         }
 
         private VisualElement NextChallengeCard(Challenge next)

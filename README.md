@@ -2,6 +2,8 @@
 
 App de estudio de Medicina Tradicional China hecha con **Unity 6 (6000.6.5f1) y C#**, para macOS, Windows, Android e iOS.
 
+Creada por **[MichaelGrandonDev](https://github.com/MichaelGrandonDev)**.
+
 - **Ruta de aprendizaje por ejes temáticos**: dentro de un eje, cada lección se abre al aprobar la anterior con un 70 %. Un eje nuevo se abre cuando dominas el 70 % de los ejes que necesita. El *modo libre* (en Ajustes) abre todo.
 - **Lecciones** con idea central, texto, tablas, notas clínicas, puntos clave, glosario con hanzi y pinyin, citas con libro y página, y una evaluación al final.
 - **Diagramas interactivos**: Wuxing con sus ciclos, Taiji y reloj de los órganos con la hora actual, balanza Yin-Yang con controles, Zang Fu, Sanjiao, formación del Qi, circulación de los canales, vasos extraordinarios… Se pueden tocar, tienen capas que se encienden y recorridos guiados.
