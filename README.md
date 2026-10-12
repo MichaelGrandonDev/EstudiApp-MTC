@@ -5,7 +5,7 @@
 [![Plataformas](https://img.shields.io/badge/plataformas-macOS%20%7C%20Windows%20%7C%20Android%20%7C%20iOS-2E7D6B)](#abrir-y-compilar)
 [![Pruebas](https://img.shields.io/badge/.NET%207%20%2B%20xUnit-68%20pruebas%20OK-3FA34D?logo=dotnet&logoColor=white)](#verificar)
 [![Estado](https://img.shields.io/badge/estado-versi%C3%B3n%20de%20prueba%200.1.0-C9A227)](#planes)
-[![Licencia](https://img.shields.io/badge/licencia-pendiente-lightgrey)](#licencia)
+[![Licencia](https://img.shields.io/badge/licencia-todos%20los%20derechos%20reservados-B22222)](LICENSE)
 
 App de estudio de **Medicina Tradicional China** hecha con **Unity 6 (6000.6.5f1) y C#**, para macOS, Windows, Android e iOS. Propone una ruta de aprendizaje por ejes temáticos con lecciones, diagramas interactivos, desafíos con estrellas y sellos, mini tests y repaso espaciado, y enlaza cada cita con la página exacta de tus propios libros en PDF.
 
@@ -78,6 +78,8 @@ Tools/
   branding/make_icon.py           Genera el icono de la app (Assets/_Project/Branding)
   vendor/                         Noto Sans SC completa (las descargas de PDFium no se versionan)
 docs/screenshots/                 Capturas de este README
+LICENSE                           Todos los derechos reservados
+THIRD_PARTY_NOTICES.md            Componentes de terceros y sus licencias
 ```
 
 El dominio no depende de Unity (`noEngineReferences: true`), así que el mismo código se compila dentro de Unity y en el proyecto de pruebas de .NET.
@@ -222,8 +224,12 @@ EstudiApp MTC es una **herramienta de estudio**. No sustituye la formación regl
 
 ## Licencia
 
-Pendiente de decisión del autor. Mientras no se añada un archivo `LICENSE`, todos los derechos sobre el código y el contenido propio quedan reservados.
+Código y contenido propio con **todos los derechos reservados** © 2026 MichaelGrandonDev: ver [`LICENSE`](LICENSE). El código se puede consultar como referencia, pero no copiar, modificar, distribuir ni usar con fines comerciales sin permiso por escrito.
 
 ## Licencias de terceros
 
-PDFium (BSD/Apache 2.0, ver `Assets/Plugins/PDFium/LICENSE-pdfium.txt`), Outfit, Cormorant Garamond y Noto Sans SC (SIL Open Font License; a Outfit se le añadieron las vocales del pinyin con carón), y Newtonsoft.Json (MIT).
+- **Tipografías** Outfit, Cormorant Garamond y Noto Sans SC: [SIL Open Font License 1.1](https://openfontlicense.org/), con el texto de cada licencia junto a las fuentes (`Assets/_Project/Resources/UI/Fonts/OFL-*.txt`). A Outfit se le añadieron las vocales del pinyin con carón y Noto Sans SC va reducida a los ideogramas usados.
+- **PDFium**: BSD/Apache 2.0, binarios de [pdfium-binaries](https://github.com/bblanchon/pdfium-binaries) (MIT); licencias en `Assets/Plugins/PDFium/`.
+- **Newtonsoft.Json**: MIT.
+
+El detalle está en [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
