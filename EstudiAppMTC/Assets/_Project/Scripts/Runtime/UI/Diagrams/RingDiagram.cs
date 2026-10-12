@@ -56,10 +56,7 @@ namespace EstudiApp.UI.Diagrams
 
             foreach (var segment in segments)
             {
-                var text = string.IsNullOrEmpty(segment.Hanzi) ? segment.Label : $"<size=125%>{segment.Hanzi}</size>\n{segment.Label}";
-                if (!string.IsNullOrEmpty(segment.Sub) && n <= 6)
-                    text += $"\n<size=80%><color=#00000099>{segment.Sub}</color></size>";
-                var label = Centered(text, "ring-label");
+                var label = Centered(SegmentText(segment), "ring-label");
                 _labels.Add(label);
                 Add(label);
             }
@@ -80,6 +77,14 @@ namespace EstudiApp.UI.Diagrams
                     UpdateCenter();
                     MarkDirtyRepaint();
                 }).Every(30000);
+        }
+
+        private string SegmentText(RingSegment segment)
+        {
+            var text = string.IsNullOrEmpty(segment.Hanzi) ? segment.Label : $"<size=125%>{segment.Hanzi}</size>\n{segment.Label}";
+            if (!string.IsNullOrEmpty(segment.Sub) && Spec.Segments.Count <= 6)
+                text += $"\n<size=80%><color={(Theme.Dark ? "#FFFFFF99" : "#00000099")}>{segment.Sub}</color></size>";
+            return text;
         }
 
         /// <summary>Ángulo en pantalla (grados, 0 = derecha, crece en sentido horario) de una hora del día.</summary>
@@ -114,6 +119,7 @@ namespace EstudiApp.UI.Diagrams
                 var mid = (_start[i] + _span[i] / 2f) * Mathf.Deg2Rad;
                 var radius = (_outer + _inner) / 2f;
                 Place(_labels[i], _center + new Vector2(Mathf.Cos(mid), Mathf.Sin(mid)) * radius);
+                _labels[i].text = SegmentText(Spec.Segments[i]);
                 _labels[i].style.fontSize = fontSize;
                 _labels[i].style.color = i == _selected ? Color.white : Theme.Ink;
             }
@@ -158,7 +164,7 @@ namespace EstudiApp.UI.Diagrams
             {
                 var color = El.Hex(Spec.Segments[i].Color);
                 var outer = _outer + (i == _selected ? _outer * 0.04f : 0f);
-                var fill = i == _selected ? color : color.Mix(Color.white, i == current ? 0.45f : 0.7f);
+                var fill = i == _selected ? color : Theme.Wash(color, i == current ? 0.45f : 0.7f);
                 Sector(p, _center, _inner, outer, _start[i], _start[i] + _span[i], fill);
                 p.strokeColor = Theme.Card;
                 p.lineWidth = Mathf.Max(1.5f, _outer * 0.012f);
@@ -166,7 +172,7 @@ namespace EstudiApp.UI.Diagrams
                 if (i == current)
                 {
                     Sector(p, _center, _inner, outer, _start[i], _start[i] + _span[i], null);
-                    p.strokeColor = color;
+                    p.strokeColor = Theme.Readable(color, 0.18f);
                     p.lineWidth = Mathf.Max(2f, _outer * 0.018f);
                     p.Stroke();
                 }
@@ -222,7 +228,7 @@ namespace EstudiApp.UI.Diagrams
         public static void DrawTaiji(Painter2D p, Vector2 c, float r)
         {
             var yin = Theme.Night;
-            var yang = new Color(0.98f, 0.96f, 0.9f);
+            var yang = Theme.YangLight;
             Circle(p, c, r, yin);
             p.BeginPath();
             p.Arc(c, r, Angle.Degrees(90f), Angle.Degrees(270f));
@@ -233,7 +239,8 @@ namespace EstudiApp.UI.Diagrams
             Circle(p, c + new Vector2(0f, r / 2f), r / 2f, yin);
             Circle(p, c + new Vector2(0f, -r / 2f), r * 0.13f, yin);
             Circle(p, c + new Vector2(0f, r / 2f), r * 0.13f, yang);
-            Circle(p, c, r, null, yin, Mathf.Max(1.5f, r * 0.03f));
+            // Sobre fondo oscuro el borde claro separa la mitad Yin del fondo.
+            Circle(p, c, r, null, Theme.Dark ? yang.Alpha(0.5f) : yin, Mathf.Max(1.5f, r * 0.03f));
         }
 
         private void OnClick(ClickEvent e)

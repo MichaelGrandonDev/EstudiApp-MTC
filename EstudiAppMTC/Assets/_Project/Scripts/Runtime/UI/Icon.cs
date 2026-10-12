@@ -36,7 +36,9 @@ namespace EstudiApp.UI
         Bolt,
         Target,
         Shield,
-        Medal
+        Medal,
+        Sun,
+        Moon
     }
 
     /// <summary>
@@ -345,6 +347,23 @@ namespace EstudiApp.UI
                     Line(12, 15, 12, 4);
                     Line(7.5f, 8.5f, 12, 4, 16.5f, 8.5f);
                     Line(4.5f, 14.5f, 4.5f, 19.5f, 19.5f, 19.5f, 19.5f, 14.5f);
+                    break;
+                case IconKind.Sun:
+                    Circle(12, 12, 4);
+                    for (var i = 0; i < 8; i++)
+                    {
+                        var a = i * Mathf.PI / 4f;
+                        var d = new Vector2(Mathf.Cos(a), Mathf.Sin(a));
+                        Line(12 + d.x * 7, 12 + d.y * 7, 12 + d.x * 9.5f, 12 + d.y * 9.5f);
+                    }
+                    break;
+                case IconKind.Moon:
+                    // Media luna: arco del círculo (12,12) r 8.5 fuera del círculo (16,8) r 7.
+                    _p.BeginPath();
+                    _p.Arc(P(12, 12), 8.5f * _s, Angle.Degrees(9.93f), Angle.Degrees(260.07f));
+                    _p.Arc(P(16, 8), 7f * _s, Angle.Degrees(218.65f), Angle.Degrees(51.35f), ArcDirection.CounterClockwise);
+                    _p.ClosePath();
+                    _p.Stroke();
                     break;
             }
         }

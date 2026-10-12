@@ -113,7 +113,7 @@ namespace EstudiApp.UI
                 if (a == Vector2.zero || b == Vector2.zero)
                     continue;
                 var midY = (a.y + b.y) / 2f;
-                p.strokeColor = _nodes[i].reached ? _color.Alpha(0.85f) : Theme.Line;
+                p.strokeColor = _nodes[i].reached ? Theme.Readable(_color, 0.18f).Alpha(0.85f) : Theme.Line;
                 p.BeginPath();
                 p.MoveTo(a);
                 p.BezierCurveTo(new Vector2(a.x, midY), new Vector2(b.x, midY), b);

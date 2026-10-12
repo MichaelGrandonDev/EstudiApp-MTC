@@ -134,8 +134,8 @@ namespace EstudiApp.UI.Diagrams
                 e.SetVisible(NodeVisible(view));
                 var selected = node.Id == _selectedNode;
                 var dim = Dim(node.Id);
-                e.style.backgroundColor = selected ? view.Color : view.Color.Mix(Color.white, 0.84f);
-                e.style.borderTopColor = e.style.borderBottomColor = e.style.borderLeftColor = e.style.borderRightColor = view.Color;
+                e.style.backgroundColor = selected ? view.Color : Theme.Wash(view.Color, 0.84f);
+                e.style.borderTopColor = e.style.borderBottomColor = e.style.borderLeftColor = e.style.borderRightColor = Theme.Readable(view.Color, 0.18f);
                 e.style.color = selected ? Color.white : Theme.Ink;
                 e.style.opacity = dim ? 0.28f : 1f;
                 e.EnableInClassList("dnode--selected", selected);
@@ -150,7 +150,7 @@ namespace EstudiApp.UI.Diagrams
                 Curve(pair.Key, out a, out c, out b);
                 Place(pair.Value, Bezier(a, c, b, 0.5f));
                 pair.Value.style.fontSize = Font(0.019f, 8f, 13f);
-                pair.Value.style.color = EdgeColor(pair.Key).Mix(Theme.Ink, 0.35f);
+                pair.Value.style.color = Theme.Readable(EdgeColor(pair.Key).Mix(Theme.Ink, 0.35f));
                 pair.Value.style.opacity = Dim(pair.Key.From) && Dim(pair.Key.To) ? 0.25f : 1f;
             }
         }
@@ -201,7 +201,7 @@ namespace EstudiApp.UI.Diagrams
             {
                 if (!EdgeVisible(edge) || !Curve(edge, out var a, out var c, out var b))
                     continue;
-                var color = EdgeColor(edge);
+                var color = Theme.Readable(EdgeColor(edge), 0.18f);
                 var selected = edge == _selectedEdge;
                 if (Dim(edge.From) && Dim(edge.To) || FocusIds.Count > 0 && (Dim(edge.From) || Dim(edge.To)))
                     color = color.Alpha(0.22f);

@@ -16,11 +16,14 @@ namespace EstudiApp.Core
     /// Recorrido de verificación: con <c>-estudiapp-shots &lt;carpeta&gt;</c> recorre las pantallas principales, guarda
     /// una captura de cada una y cierra la app. Con <c>-estudiapp-pdf &lt;ruta&gt;</c> además importa ese PDF, lo abre
     /// en el lector desde una cita y lo quita de la biblioteca al terminar. El progreso se simula en memoria: el del
-    /// estudiante no se modifica.
+    /// estudiante no se modifica. Con <c>-estudiapp-theme dark</c> recorre la app en el tema oscuro.
     /// </summary>
     public static class ScreenshotTour
     {
         public static string Folder => Argument("-estudiapp-shots");
+
+        /// <summary>Con <c>-estudiapp-theme light|dark|system</c> se usa esa apariencia (sin guardarla).</summary>
+        public static string ThemeArgument => Argument("-estudiapp-theme");
 
         public static IEnumerator Run(AppShell shell, AppServices services)
         {
@@ -83,6 +86,15 @@ namespace EstudiApp.Core
             yield return Shot("buscar");
             shell.Push(new SettingsPage());
             yield return Shot("ajustes");
+
+            // Cambio de apariencia al momento (sin guardarlo), con un diálogo y un aviso encima.
+            var theme = Theme.Mode;
+            shell.UseTheme(Theme.Dark ? ThemeMode.Light : ThemeMode.Dark);
+            shell.Toast("Apariencia cambiada al momento.");
+            shell.Confirm("Reiniciar progreso", "Se borrarán las lecciones dominadas, los desafíos, las estrellas y la racha. Tus notas y libros se conservan.", "Reiniciar", null);
+            yield return Shot("ajustes-otro-tema");
+            shell.CloseOverlay();
+            shell.UseTheme(theme);
 
             var pdf = Argument("-estudiapp-pdf");
             if (!string.IsNullOrEmpty(pdf))

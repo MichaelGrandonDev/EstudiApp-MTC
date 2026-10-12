@@ -54,6 +54,8 @@ namespace EstudiApp.UI
         private Label _reviewBadge;
         private readonly Dictionary<Tab, List<Page>> _stacks = new Dictionary<Tab, List<Page>>();
         private readonly Dictionary<Page, VisualElement> _views = new Dictionary<Page, VisualElement>();
+        private readonly List<Button> _themeButtons = new List<Button>();
+        private PanelSettings _panel;
         private Tab _tab = Tab.Home;
         private float _flushTimer;
 
@@ -62,15 +64,20 @@ namespace EstudiApp.UI
 
         private void Awake()
         {
+            // El tema se decide antes del primer fotograma (también la pantalla de carga): sin destello claro.
+            Theme.Mode = Theme.ParseMode(ScreenshotTour.ThemeArgument ?? new JsonStore<AppSettings>(AppServices.SettingsFile).Load().Theme);
+            Theme.Dark = ResolveDark(Theme.Mode);
+            Debug.Log($"[EstudiApp] Apariencia: {Theme.ModeId(Theme.Mode)} → {(Theme.Dark ? "oscuro" : "claro")}");
             _document = GetComponent<UIDocument>();
             var source = _document.panelSettings != null ? _document.panelSettings : Resources.Load<PanelSettings>(PanelSettingsResource);
             if (source != null)
-                _document.panelSettings = ConfigurePanel(source);
+                _document.panelSettings = _panel = ConfigurePanel(source);
             _root = _document.rootVisualElement;
             var theme = Resources.Load<StyleSheet>("UI/Theme");
             if (theme != null)
                 _root.styleSheets.Add(theme);
             _root.AddToClassList("root");
+            ApplyThemeClass();
             _loading = _root.Append(El.Div("loading"));
             var logo = _loading.Append(new TaijiMark());
             logo.AddToClassList("loading__logo");
@@ -83,6 +90,7 @@ namespace EstudiApp.UI
         private static PanelSettings ConfigurePanel(PanelSettings source)
         {
             var settings = Instantiate(source);
+            settings.colorClearValue = Theme.Paper;
             if (Application.isMobilePlatform)
             {
                 settings.scaleMode = PanelScaleMode.ConstantPhysicalSize;
@@ -159,6 +167,7 @@ namespace EstudiApp.UI
             nav.Append(El.Spacer()).AddToClassList("nav__spacer");
             nav.Append(El.IconBtn(IconKind.Search, "Buscar", () => Push(new SearchPage()), "nav__btn", "nav__btn--secondary"));
             nav.Append(El.IconBtn(IconKind.Settings, "Ajustes", () => Push(new SettingsPage()), "nav__btn", "nav__btn--secondary"));
+            _themeButtons.Add(nav.Append(El.IconBtn(IconKind.Moon, "Modo oscuro", ToggleTheme, "nav__btn", "nav__btn--secondary")));
             var credit = nav.Append(El.Btn(string.Empty, AppConfig.OpenAuthorPage, "nav__credit"));
             credit.tooltip = AppConfig.AuthorUrl;
             credit.Append(El.Text("Creada por", "nav__credit-label")).pickingMode = PickingMode.Ignore;
@@ -170,8 +179,10 @@ namespace EstudiApp.UI
             _title = bar.Append(El.Text(string.Empty, "topbar__title"));
             bar.Append(El.Spacer());
             bar.Append(El.IconBtn(IconKind.Search, null, () => Push(new SearchPage()), "topbar__btn"));
+            _themeButtons.Add(bar.Append(El.IconBtn(IconKind.Moon, null, ToggleTheme, "topbar__btn")));
             bar.Append(El.IconBtn(IconKind.Settings, null, () => Push(new SettingsPage()), "topbar__btn", "topbar__btn--narrow"));
             _stage = main.Append(El.Div("stage"));
+            RefreshThemeButtons();
 
             _overlay = _root.Append(El.Div("overlay"));
             _overlay.SetVisible(false);
@@ -203,6 +214,69 @@ namespace EstudiApp.UI
             _root.EnableInClassList("text-large", settings.TextScale > 1.08f);
             _root.EnableInClassList("text-xlarge", settings.TextScale > 1.2f);
             _root.EnableInClassList("text-small", settings.TextScale < 0.95f);
+        }
+
+        // ---- Apariencia ---------------------------------------------------------------------------------------
+
+        private static bool ResolveDark(ThemeMode mode) =>
+            mode == ThemeMode.Dark || mode == ThemeMode.System && SystemTheme.IsDark();
+
+        /// <summary>Cambia y guarda la apariencia; se aplica al momento.</summary>
+        public void SetTheme(ThemeMode mode)
+        {
+            Services.Settings.Theme = Theme.ModeId(mode);
+            Services.SaveSettings();
+            UseTheme(mode);
+        }
+
+        private void ToggleTheme() => SetTheme(Theme.Dark ? ThemeMode.Light : ThemeMode.Dark);
+
+        /// <summary>Aplica la apariencia sin guardarla.</summary>
+        public void UseTheme(ThemeMode mode)
+        {
+            var dark = ResolveDark(mode);
+            var changed = dark != Theme.Dark;
+            Theme.Mode = mode;
+            Theme.Dark = dark;
+            ApplyThemeClass();
+            RefreshThemeButtons();
+            if (changed)
+            {
+                // Lo pintado con Painter2D y los colores puestos desde código no siguen a la hoja de estilos.
+                _root.Query<VisualElement>().ForEach(e => e.MarkDirtyRepaint());
+                _root.Query<Diagrams.DiagramCanvas>().ForEach(c => c.Refresh());
+            }
+            Rebuild();
+        }
+
+        private void ApplyThemeClass()
+        {
+            _root.EnableInClassList("theme-dark", Theme.Dark);
+            if (_panel != null)
+                _panel.colorClearValue = Theme.Paper;
+            var camera = Camera.main;
+            if (camera != null)
+                camera.backgroundColor = Theme.Paper;
+        }
+
+        private void RefreshThemeButtons()
+        {
+            foreach (var button in _themeButtons)
+            {
+                var icon = button.Q<Icon>();
+                if (icon != null)
+                    icon.Kind = Theme.Dark ? IconKind.Sun : IconKind.Moon;
+                var label = button.Q<Label>(className: "icon-btn__label");
+                if (label != null)
+                    label.text = Theme.Dark ? "Modo claro" : "Modo oscuro";
+                button.tooltip = Theme.Dark ? "Cambiar al modo claro" : "Cambiar al modo oscuro";
+            }
+        }
+
+        private void OnApplicationFocus(bool focused)
+        {
+            if (focused && Services != null && Theme.Mode == ThemeMode.System && ResolveDark(ThemeMode.System) != Theme.Dark)
+                UseTheme(ThemeMode.System);
         }
 
         private void UpdateBadges()

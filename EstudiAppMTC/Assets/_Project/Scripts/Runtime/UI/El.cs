@@ -57,9 +57,10 @@ namespace EstudiApp.UI
             return element;
         }
 
+        /// <summary>Color de texto o icono sobre las superficies del tema (en el oscuro se aclara si hace falta).</summary>
         public static T Ink<T>(this T element, Color color) where T : VisualElement
         {
-            element.style.color = color;
+            element.style.color = Theme.Readable(color);
             return element;
         }
 
@@ -91,21 +92,5 @@ namespace EstudiApp.UI
         public static Color Alpha(this Color color, float alpha) => new Color(color.r, color.g, color.b, alpha);
 
         public static Color Mix(this Color color, Color other, float t) => Color.Lerp(color, other, t);
-    }
-
-    /// <summary>Paleta (la misma que Theme.uss) para lo que se dibuja desde código.</summary>
-    public static class Theme
-    {
-        public static readonly Color Paper = new Color32(0xF6, 0xF1, 0xE7, 0xFF);
-        public static readonly Color Card = new Color32(0xFF, 0xFD, 0xF8, 0xFF);
-        public static readonly Color Ink = new Color32(0x2B, 0x26, 0x22, 0xFF);
-        public static readonly Color Muted = new Color32(0x7A, 0x70, 0x66, 0xFF);
-        public static readonly Color Line = new Color32(0xE2, 0xD8, 0xC8, 0xFF);
-        public static readonly Color Jade = new Color32(0x2E, 0x7D, 0x6B, 0xFF);
-        public static readonly Color Cinnabar = new Color32(0xB5, 0x52, 0x3B, 0xFF);
-        public static readonly Color Gold = new Color32(0xC9, 0x9A, 0x2E, 0xFF);
-        public static readonly Color Night = new Color32(0x24, 0x2A, 0x33, 0xFF);
-        public static readonly Color Ok = new Color32(0x3E, 0x8E, 0x5A, 0xFF);
-        public static readonly Color Bad = new Color32(0xB2, 0x3A, 0x48, 0xFF);
     }
 }

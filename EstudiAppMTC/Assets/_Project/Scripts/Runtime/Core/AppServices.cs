@@ -10,6 +10,8 @@ namespace EstudiApp.Core
         /// <summary>Escala del texto de las lecciones (0.9 – 1.3).</summary>
         public float TextScale = 1f;
         public bool ShowHanzi = true;
+        /// <summary>Apariencia: "light", "dark" o "system".</summary>
+        public string Theme = "light";
         /// <summary>Simulación de compra (sólo con planes activos, hasta conectar la tienda).</summary>
         public bool PremiumPreview;
         public bool SeenWelcome;
@@ -19,7 +21,9 @@ namespace EstudiApp.Core
     public class AppServices
     {
         private readonly JsonStore<ProgressState> _progressStore = new JsonStore<ProgressState>("progress.json");
-        private readonly JsonStore<AppSettings> _settingsStore = new JsonStore<AppSettings>("settings.json");
+        public const string SettingsFile = "settings.json";
+
+        private readonly JsonStore<AppSettings> _settingsStore = new JsonStore<AppSettings>(SettingsFile);
         private bool _dirty;
 
         public Curriculum Curriculum { get; }

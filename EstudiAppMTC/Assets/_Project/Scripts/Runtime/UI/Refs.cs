@@ -53,7 +53,7 @@ namespace EstudiApp.UI
         {
             var text = Format(reference, curriculum);
             if (withNote && !string.IsNullOrEmpty(reference.Note))
-                text += $"  <color=#7A7066>— {reference.Note}</color>";
+                text += $"  <color={Theme.MutedHex}>— {reference.Note}</color>";
             var button = El.Btn(string.Empty, () => open?.Invoke(reference), "ref-btn");
             button.Add(new Icon(IconKind.Book));
             button.Append(El.Text(text, "ref-btn__text")).pickingMode = PickingMode.Ignore;

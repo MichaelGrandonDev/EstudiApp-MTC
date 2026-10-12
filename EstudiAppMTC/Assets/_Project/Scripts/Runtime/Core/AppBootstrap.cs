@@ -9,6 +9,13 @@ namespace EstudiApp.Core
     {
         [SerializeField] private AppShell appShell;
 
+        private void Awake()
+        {
+            // Sin foco la app se pausa: el recorrido de capturas no arrancaría si la ventana se abre detrás de otra.
+            if (!string.IsNullOrEmpty(ScreenshotTour.Folder))
+                Application.runInBackground = true;
+        }
+
         private IEnumerator Start()
         {
             Application.targetFrameRate = 60;

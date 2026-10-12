@@ -44,6 +44,18 @@ namespace EstudiApp.UI.Pages
                 Shell.ApplySettings();
             });
 
+            Section("Apariencia");
+            var themes = Root.Append(El.Div("chips", "theme-options"));
+            foreach (var (mode, icon, label) in new[] { (ThemeMode.Light, IconKind.Sun, "Claro"), (ThemeMode.Dark, IconKind.Moon, "Oscuro"), (ThemeMode.System, IconKind.Settings, "Sistema") })
+            {
+                var chip = themes.Append(El.Chip(label, () => Shell.SetTheme(mode), Theme.Mode == mode));
+                chip.Insert(0, new Icon(icon));
+                chip.AddToClassList("theme-option");
+            }
+            Root.Append(El.Text(SystemTheme.CanDetect
+                ? "«Sistema» sigue el modo claro u oscuro del dispositivo. Las páginas de tus PDF se ven siempre como el papel."
+                : "En este dispositivo no se puede saber el modo del sistema: «Sistema» usa el tema claro. Las páginas de tus PDF se ven siempre como el papel.", "setting-help"));
+
             Section("Plan");
             if (S.Entitlements.ShowsPlans)
             {

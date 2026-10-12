@@ -8,8 +8,8 @@ namespace EstudiApp.UI.Diagrams
     /// <summary>Balanza Yin-Yang: dos columnas que el estudiante sube o baja; el estado resultante explica el síndrome.</summary>
     public class BalanceDiagram : DiagramCanvas
     {
-        private static readonly Color YinColor = new Color32(0x3F, 0x5A, 0x7A, 0xFF);
-        private static readonly Color YangColor = new Color32(0xD4, 0x6A, 0x3A, 0xFF);
+        private static Color YinColor => Theme.Yin;
+        private static Color YangColor => Theme.Yang;
 
         /// <summary>Valores de ejemplo para cada estado (1 = normal).</summary>
         private static readonly Dictionary<string, Vector2> Presets = new Dictionary<string, Vector2>
@@ -165,7 +165,7 @@ namespace EstudiApp.UI.Diagrams
             p.ArcTo(new Vector2(x + width / 2f, top), new Vector2(x + width / 2f, top + radius), radius);
             p.LineTo(new Vector2(x + width / 2f, BaseY));
             p.ClosePath();
-            p.fillColor = color.Mix(Color.white, 0.15f);
+            p.fillColor = Theme.Wash(color, 0.15f);
             p.Fill();
         }
     }

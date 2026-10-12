@@ -71,3 +71,10 @@ extern "C" char *EstudiAppPdf_TakeResult()
     }
     return strdup(value.UTF8String);
 }
+
+// Tema del sistema para la opción «Sistema» de Apariencia: 1 si iOS está en modo oscuro.
+extern "C" int EstudiApp_SystemIsDark()
+{
+    UITraitCollection *traits = UnityGetGLViewController().traitCollection ?: UITraitCollection.currentTraitCollection;
+    return traits.userInterfaceStyle == UIUserInterfaceStyleDark ? 1 : 0;
+}

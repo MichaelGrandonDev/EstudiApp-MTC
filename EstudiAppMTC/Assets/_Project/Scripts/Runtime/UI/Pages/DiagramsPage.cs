@@ -84,7 +84,7 @@ namespace EstudiApp.UI.Pages
                 var row = list.Append(El.Div("lesson-row"));
                 var badge = row.Append(El.Div("lesson-row__badge"));
                 badge.Append(new Icon(IconKind.Book));
-                badge.style.color = El.Hex(axis.Color);
+                badge.style.color = Theme.Readable(El.Hex(axis.Color));
                 var body = row.Append(El.Div("lesson-row__body"));
                 body.Append(El.Text(lesson.Title, "lesson-row__title"));
                 body.Append(El.Text(axis.Title, "lesson-row__meta"));

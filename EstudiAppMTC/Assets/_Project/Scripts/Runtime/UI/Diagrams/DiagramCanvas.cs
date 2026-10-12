@@ -44,6 +44,8 @@ namespace EstudiApp.UI.Diagrams
                     Paint(ctx.painter2D);
             };
             RegisterCallback<GeometryChangedEvent>(_ => Resize());
+            // Al volver a una página guardada, el tema pudo cambiar mientras no estaba en pantalla.
+            RegisterCallback<AttachToPanelEvent>(_ => Refresh());
         }
 
         public static DiagramCanvas Create(DiagramSpec spec)

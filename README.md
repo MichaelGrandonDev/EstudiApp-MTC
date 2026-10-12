@@ -18,6 +18,8 @@ Creada por **[MichaelGrandonDev](https://github.com/MichaelGrandonDev)**.
 | ![Pantalla de inicio con nivel, XP, estrellas y sellos](docs/screenshots/02-inicio.png) | ![Mapa de desafíos del eje Fundamentos de la MTC](docs/screenshots/08-desafios-mapa.png) | ![Ejercicio de emparejar hanzi y pinyin con su significado](docs/screenshots/13-minitest-emparejar.png) |
 | **Examen del eje y sello** | **Diagrama Wuxing** | **Móvil** |
 | ![Resultado del examen del eje con estrellas, XP y sello](docs/screenshots/15-examen-sello.png) | ![Diagrama interactivo de los Cinco Elementos y sus ciclos](docs/screenshots/18-diagrama-wuxing-ciclos.png) | ![Pantalla de inicio en móvil](docs/screenshots/25-movil-inicio.png) |
+| **Modo oscuro: inicio** | **Modo oscuro: Taiji y reloj de órganos** | |
+| ![Pantalla de inicio en modo oscuro](docs/screenshots/02-inicio-oscuro.png) | ![Diagrama Taiji con el reloj de los órganos en modo oscuro](docs/screenshots/19-diagrama-taiji-oscuro.png) | |
 
 ## Funcionalidades
 
@@ -29,6 +31,7 @@ Creada por **[MichaelGrandonDev](https://github.com/MichaelGrandonDev)**.
 - **Repaso espaciado** (cajas Leitner: 1, 3, 7, 16 y 35 días) con las preguntas de las evaluaciones.
 - **Biblioteca y lector PDF**: subes tus PDF, que se reconocen y enlazan solos con la bibliografía. Cada cita de una lección abre tu PDF en la página exacta. El lector tiene zoom, marcadores, búsqueda de texto y ajuste de desfase si tu edición numera distinto.
 - **Búsqueda** en todo el temario (lecciones, glosario y diagramas).
+- **Modo oscuro**: apariencia Claro, Oscuro o Sistema (sigue al sistema operativo) en Ajustes, o con el botón de luna/sol de la barra lateral. Se aplica al momento y se recuerda; las páginas de los PDF siguen blancas como el papel.
 - <a id="planes"></a>**Planes**: por ahora es una *versión de prueba* con todo abierto. El modelo gratuito/Premium ya está programado y se activa al compilar con `-plans`.
 
 Los resúmenes están redactados con palabras propias a partir de Li Ping (*El gran libro de la medicina china*), Giovanni Maciocia (*Los fundamentos de la medicina china*), el *Su Wen*, Claudia Focks (*Atlas de acupuntura*) y los apuntes de la Escuela Neidan. Los libros **no** se incluyen en la app ni en este repositorio: cada estudiante sube los suyos.
